@@ -1,11 +1,11 @@
 import React from 'react'
-import Payment from './components/Payment'
+import LandingPage from './pages/LandingPage'
 
 function App() {
 
   return (
     <>
-      <Payment/>
+    <LandingPage/>
     </>
   )
 }

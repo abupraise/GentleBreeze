@@ -1,25 +1,25 @@
 import React from 'react';
 
 const PlanCard = ({ title, price, features, bgColor, textColor, buttonBgColor, buttonTextColor }) => (
-  <div className={`shadow-md rounded-lg ${bgColor} p-6 w-full max-w-md`}>
+  <button className={`shadow-md rounded-lg ${bgColor} p-6 w-full max-w-md transform transition duration-300 ease-in-out hover:bg-black hover:text-white`}>
     <div className="mb-6">
-      <div className={`text-lg font-semibold ${textColor} mb-2`}>{title}</div>
+      <div className={`text-lg font-semibold ${textColor} mb-2 hover:text-white font-signika`}>{title}</div>
       <div className="flex items-baseline">
-        <span className={`text-4xl font-semibold ${textColor}`}>${price}</span>
-        <span className={`text-base ${textColor} ml-2`}>/ Month</span>
+        <span className={`text-4xl font-semibold ${textColor} hover:text-white font-signika`}>${price}</span>
+        <span className={`text-base ${textColor} ml-2 hover:text-white font-signika`}>/ Month</span>
       </div>
     </div>
-    <div className="text-sm text-opacity-50 mb-6">{features.description}</div>
+    <div className="text-sm text-opacity-50 mb-6 hover:text-opacity-75 font-signika">{features.description}</div>
     {features.list.map((feature, index) => (
       <div key={index} className="flex items-center mb-2">
-        <div className={`opacity-70 bg-${textColor} rounded-full w-5 h-5 mr-2`} />
-        <span className={`text-sm ${textColor}`}>{feature}</span>
+        <div className={`opacity-70 bg-${textColor} rounded-full w-5 h-5 mr-2 hover:bg-white`} />
+        <span className={`text-sm ${textColor} hover:text-white font-signika`}>{feature}</span>
       </div>
     ))}
-    <div className={`rounded-lg ${buttonBgColor} py-3 w-full text-center mt-6`}>
-      <span className={`text-lg font-bold ${buttonTextColor}`}>Choose Plan</span>
+    <div className={`rounded-lg ${buttonBgColor} py-3 w-full text-center mt-6 transition duration-300 ease-in-out hover:bg-white hover:text-black`}>
+      <span className={`text-lg font-bold ${buttonTextColor} hover:text-black font-signika`}>Choose Plan</span>
     </div>
-  </div>
+  </button>
 );
 
 const Payment = () => {
@@ -81,7 +81,7 @@ const Payment = () => {
   ];
 
   return (
-    <div className="bg-white flex flex-col items-center p-20 w-full box-border">
+    <div className="bg-white flex flex-col items-center p-20 w-full box-border font-signika">
       <div className="mb-12 flex flex-col items-center w-full box-border text-center">
         <div className="text-lg opacity-40 font-normal mb-4">Pricing plan</div>
         <span className="text-4xl font-bold uppercase">Join Today</span>
