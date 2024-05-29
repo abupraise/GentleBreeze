@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import React from 'react'
+import Payment from './components/Payment'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      
+      <Payment/>
     </>
   )
 }
