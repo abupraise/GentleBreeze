@@ -16,7 +16,7 @@ const reviewers = [
 const Reviewers = () => {
   return (
     <>
-      <div className="relative m-[1.7rem_5.8rem_1.7rem_0] flex p-[0_0_1.3rem_0] w-[27.2rem] h-auto box-border">
+      <div className="relative m-[1.7rem_5.8rem_1.7rem_0]  flex p-[0_0_1.3rem_0] w-[27.2rem] h-auto box-border">
         <div className="relative flex flex-col w-[27.2rem] h-auto box-border">
           <div className="m-[0_0_0.3rem_0] flex flex-row self-start w-[22.5rem] box-border">
             {reviewers.slice(0, 2).map((reviewer, index) => (

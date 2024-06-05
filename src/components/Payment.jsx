@@ -1,98 +1,124 @@
-import React from 'react';
-
-const PlanCard = ({ title, price, features, bgColor, textColor, buttonBgColor, buttonTextColor }) => (
-  <button className={`shadow-md rounded-lg ${bgColor} p-6 w-full max-w-md transform transition duration-300 ease-in-out hover:bg-black hover:text-white`}>
-    <div className="mb-6">
-      <div className={`text-lg font-semibold ${textColor} mb-2 hover:text-white font-signika`}>{title}</div>
-      <div className="flex items-baseline">
-        <span className={`text-4xl font-semibold ${textColor} hover:text-white font-signika`}>${price}</span>
-        <span className={`text-base ${textColor} ml-2 hover:text-white font-signika`}>/ Month</span>
-      </div>
-    </div>
-    <div className="text-sm text-opacity-50 mb-6 hover:text-opacity-75 font-signika">{features.description}</div>
-    {features.list.map((feature, index) => (
-      <div key={index} className="flex items-center mb-2">
-        <div className={`opacity-70 bg-${textColor} rounded-full w-5 h-5 mr-2 hover:bg-white`} />
-        <span className={`text-sm ${textColor} hover:text-white font-signika`}>{feature}</span>
-      </div>
-    ))}
-    <div className={`rounded-lg ${buttonBgColor} py-3 w-full text-center mt-6 transition duration-300 ease-in-out hover:bg-white hover:text-black`}>
-      <span className={`text-lg font-bold ${buttonTextColor} hover:text-black font-signika`}>Choose Plan</span>
-    </div>
-  </button>
-);
+import React, { useState } from 'react';
 
 const Payment = () => {
-  const plans = [
-    {
-      title: 'Beginner Plan',
-      price: '05',
-      features: {
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.',
-        list: [
-          'Feature 1',
-          'Feature 2',
-          'Feature 3',
-          'Feature 4',
-          'Feature 5',
-        ],
-      },
-      bgColor: 'bg-white',
-      textColor: 'text-black',
-      buttonBgColor: 'bg-black',
-      buttonTextColor: 'text-white',
-    },
-    {
-      title: 'Premium Plan',
-      price: '15',
-      features: {
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.',
-        list: [
-          'Feature 1',
-          'Feature 2',
-          'Feature 3',
-          'Feature 4',
-          'Feature 5',
-        ],
-      },
-      bgColor: 'bg-black',
-      textColor: 'text-white',
-      buttonBgColor: 'bg-white',
-      buttonTextColor: 'text-black',
-    },
-    {
-      title: 'Expert Plan',
-      price: '20',
-      features: {
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.',
-        list: [
-          'Feature 1',
-          'Feature 2',
-          'Feature 3',
-          'Feature 4',
-          'Feature 5',
-        ],
-      },
-      bgColor: 'bg-white',
-      textColor: 'text-black',
-      buttonBgColor: 'bg-black',
-      buttonTextColor: 'text-white',
-    },
-  ];
+  const [billingPeriod, setBillingPeriod] = useState('Yearly');
 
   return (
-    <div className="bg-white flex flex-col items-center p-20 w-full box-border font-signika">
-      <div className="mb-12 flex flex-col items-center w-full box-border text-center">
-        <div className="text-lg opacity-40 font-normal mb-4">Pricing plan</div>
-        <span className="text-4xl font-bold uppercase">Join Today</span>
+    <div className="bg-white flex flex-col items-center p-20 w-full">
+      <div className="flex flex-col lg:flex-row justify-between w-full lg:w-4/5 mb-12">
+        <div className="flex flex-col mb-8 lg:mb-0">
+          <div className="text-opacity-40 mb-4 text-2xl font-signika text-black">
+            Pricing Plan
+          </div>
+          <span className="text-opacity-90 text-6xl font-signika font-bold uppercase text-black">
+            Join Today
+          </span>
+        </div>
+        <div className="shadow-lg rounded-2xl bg-white flex h-12">
+          <button
+            onClick={() => setBillingPeriod('Monthly')}
+            className={`rounded-2xl w-24 text-center ${
+              billingPeriod === 'Monthly' ? 'bg-black text-white' : 'bg-white text-black'
+            }`}
+          >
+            <span className="font-signika font-semibold text-lg">
+              Monthly
+            </span>
+          </button>
+          <button
+            onClick={() => setBillingPeriod('Yearly')}
+            className={`rounded-2xl w-24 text-center ${
+              billingPeriod === 'Yearly' ? 'bg-black text-white' : 'bg-white text-black'
+            }`}
+          >
+            <span className="font-signika font-semibold text-lg">
+              Yearly
+            </span>
+          </button>
+        </div>
       </div>
-      <div className="flex justify-between w-full max-w-5xl gap-8 box-border flex-wrap">
-        {plans.map((plan, index) => (
-          <PlanCard key={index} {...plan} />
-        ))}
+      <div className="flex flex-col lg:flex-row gap-8 w-full lg:w-4/5">
+        <PricingCard 
+          plan="Beginner Plan" 
+          price={billingPeriod === 'Yearly' ? '$5' : '$60'} 
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"
+          features={["Feature 1", "Feature 2", "Feature 3", "Feature 4"]}
+          availableFeatures={["Feature 1", "Feature 2"]}
+          buttonColor="bg-black"
+          buttonTextColor="text-white"
+        />
+        <PricingCard 
+          plan="Premium Plan" 
+          price={billingPeriod === 'Yearly' ? '$15' : '$180'} 
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"
+          features={["Feature 1", "Feature 2", "Feature 3", "Feature 4"]}
+          availableFeatures={["Feature 1", "Feature 2", "Feature 3"]}
+          cardColor="bg-black"
+          textColor="text-white"
+          buttonColor="bg-white"
+          buttonTextColor="text-black"
+          isPremium
+        />
+        <PricingCard 
+          plan="Expert Plan" 
+          price={billingPeriod === 'Yearly' ? '$20' : '$240'} 
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"
+          features={["Feature 1", "Feature 2", "Feature 3", "Feature 4"]}
+          availableFeatures={["Feature 1", "Feature 2", "Feature 3", "Feature 4"]}
+          buttonColor="bg-black"
+          buttonTextColor="text-white"
+        />
       </div>
     </div>
   );
-};
+}
+
+const PricingCard = ({ plan, price, description, features, availableFeatures, cardColor = "bg-white", textColor = "text-black", buttonColor = "bg-black", buttonTextColor = "text-white", isPremium = false }) => {
+  return (
+    <div className={`shadow-md rounded-2xl p-8 w-full lg:w-1/3 ${cardColor} ${textColor}`}>
+      <div className="mb-10">
+        <div className="text-opacity-70 mb-4 text-lg font-signika font-semibold">
+          {plan}
+        </div>
+        <div className="flex items-baseline mb-4">
+          <span className="text-opacity-90 text-6xl font-signika font-semibold mr-2">
+            {price}
+          </span>
+          <span className="text-opacity-90 text-lg font-signika font-semibold">
+            / Month
+          </span>
+        </div>
+        <span className="text-opacity-50 text-lg font-signika font-light">
+          {description}
+        </span>
+      </div>
+      <ul className="mb-10 space-y-4">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center space-x-4">
+            {availableFeatures.includes(feature) ? (
+              <div className={`${isPremium ? 'bg-white text-black' : 'bg-black text-white'} rounded-full w-5 h-5 flex items-center justify-center`}>
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+            ) : (
+              <div className="bg-white text-black rounded-full w-5 h-5 flex items-center justify-center border border-black">
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+            )}
+            <span className={`text-lg font-signika font-normal ${textColor}`}>
+              {feature}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <button className={`rounded-2xl ${buttonColor} w-full py-4 ${buttonTextColor} font-signika font-bold text-lg`}>
+        Choose Plan
+      </button>
+    </div>
+  );
+}
 
 export default Payment;
