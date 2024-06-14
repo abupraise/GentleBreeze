@@ -5,10 +5,10 @@ import {
   faStar as faRegularStar,
 } from "@fortawesome/free-solid-svg-icons";
 
-const ReviewCard = ({ name, rating, reviewText, className, isOverlay }) => {
+const ReviewCard = ({ name, rating, reviewText, className, isOverlay, hasBorder }) => {
   return (
     <div
-      className={`relative shadow-md rounded-[30px] bg-white flex flex-col p-4 w-[500px] h-[250px] mb-6 border-2 border-[#1F1F1F] border-opacity-50 ${className}`}
+      className={`relative shadow-md rounded-[30px] bg-white flex flex-col p-4 w-[500px] h-[250px] mb-6 ${className} ${hasBorder ? "border-2 border-[#1F1F1F] border-opacity-100" : ""}`}
     >
       <div className={`relative z-10 ${isOverlay ? "opacity-50" : ""}`}>
         <div

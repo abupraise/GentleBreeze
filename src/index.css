@@ -6,3 +6,12 @@
 body {
   font-family: 'Signika', sans-serif;
 }
+
+.relative {
+  border-opacity: 50%;
+}
+
+.relative:focus-within {
+  border-opacity: 100%;
+}
+

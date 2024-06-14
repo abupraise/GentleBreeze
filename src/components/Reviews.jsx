@@ -85,12 +85,8 @@ const Reviews = () => {
                   rating={review.rating}
                   reviewText={review.reviewText}
                   isOverlay={index !== currentIndex}
+                  hasBorder={index === currentIndex}
                   className="flex-shrink-0 transition-opacity duration-500"
-                  style={{
-                    width: "300px",
-                    md: "500px",
-                    marginRight: "20px",
-                  }}
                 />
               ))}
             </div>
