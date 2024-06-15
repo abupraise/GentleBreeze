@@ -94,23 +94,23 @@ const Trainers = () => (
       <TrainerCard
         imageUrl={image1}
         name="Alhassan Kutigi"
-        description="(Coach And Gym Manager)"
-        instagramUrl="https://www.instagram.com/alhassankutigi"
-        tiktokUrl="https://www.tiktok.com/@alhassankutigi"
+        description="Coach And Gym Manager"
+        instagramUrl="https://www.instagram.com/ak_barfitness_?igsh=MTVmcHhqbGI4d2JyZA=="
+        tiktokUrl="https://www.tiktok.com/@ak_barfitnes?_t=8nEHTeT9HQj&_r=1"
       />
       <TrainerCard
         imageUrl={image2}
         name="Sabiu Isah Galadima"
-        description="(Fitness Trainer)"
-        instagramUrl="https://www.instagram.com/sabiu_isah"
-        tiktokUrl="https://www.tiktok.com/@sabiuisah"
+        description="Fitness Trainer"
+        instagramUrl="https://www.instagram.com/steelman_00?igsh=aTMxcDRqMDcyeGp6"
+        tiktokUrl="https://www.tiktok.com/@pullup_king00?_t=8nEHkgdyAli&_r=1"
       />
       <TrainerCard
         imageUrl={image3}
         name="Auwal Umar Mainika"
-        description="(Fitness Trainer)"
-        instagramUrl="https://www.instagram.com/auwalumar"
-        tiktokUrl="https://www.tiktok.com/@auwalumar"
+        description="Fitness Trainer"
+        instagramUrl="https://www.instagram.com/a_u_mainika?igsh=M3Y2dGhqOWF6d2pv"
+        tiktokUrl="https://www.tiktok.com/@a_u_mainika?_t=8nEHu8zHjtu&_r=1"
       />
     </div>
     <MentorSection />
