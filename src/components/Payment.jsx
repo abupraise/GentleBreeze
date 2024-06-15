@@ -4,7 +4,7 @@ const Payment = () => {
   const [billingPeriod, setBillingPeriod] = useState('Yearly');
 
   return (
-    <div className="bg-white flex flex-col items-center p-20 w-full">
+    <div className="bg-white flex flex-col items-center p-10 w-full">
       <div className="flex flex-col lg:flex-row justify-between w-full lg:w-4/5 mb-12">
         <div className="flex flex-col mb-8 lg:mb-0">
           <div className="text-opacity-40 mb-4 text-2xl font-signika text-black">
