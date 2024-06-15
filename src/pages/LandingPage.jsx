@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Payment from "../components/Payment";
 import Reviews from "../components/Reviews";
 import Footer from "../components/Footer";
@@ -9,25 +10,60 @@ import AboutUs from "../components/AboutUs";
 import Trainers from "../components/Trainers";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const LandingPage = () => {
   return (
     <>
       <Navbar />
-      <section id="home">
+      <motion.section
+        id="home"
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants}
+        transition={{ duration: 0.5 }}
+      >
         <Hero />
-      </section>
-      <section id="about">
+      </motion.section>
+      <motion.section
+        id="about"
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <AboutUs />
-      </section>
-      <section id="trainers">
+      </motion.section>
+      <motion.section
+        id="trainers"
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
         <Trainers />
-      </section>
-      <section id="plans">
+      </motion.section>
+      <motion.section
+        id="plans"
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants}
+        transition={{ duration: 0.5, delay: 0.6 }}
+      >
         <Payment />
-      </section>
-      <section id="reviews">
+      </motion.section>
+      <motion.section
+        id="reviews"
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      >
         <Reviews />
-      </section>
+      </motion.section>
       <Contact />
       <Footer />
       <ScrollToTopButton />

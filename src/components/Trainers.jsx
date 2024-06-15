@@ -1,4 +1,9 @@
-import React from "react";
+import React from 'react';
+import image1 from '../assets/Rectangle37.jpeg';
+import image2 from '../assets/Rectangle37.jpeg';
+import image3 from '../assets/Rectangle39.jpeg';
+import image4 from '../assets/Rectangle34.jpeg';
+import image5 from '../assets/Rectangle35.jpeg';
 
 const SectionTitle = ({ title, description }) => (
   <div className="mb-14 text-center max-w-4xl">
@@ -7,28 +12,42 @@ const SectionTitle = ({ title, description }) => (
   </div>
 );
 
-const TrainerCard = ({ imageUrl, name, description, withOverlay }) => (
-  <div
-    className="relative m-4 rounded-[1.9rem] shadow-lg w-[20.9rem] h-[25rem] bg-cover bg-center"
-    style={{ backgroundImage: `url(${imageUrl})` }}
-  >
-    {withOverlay && (
-      <div className="absolute inset-0 backdrop-blur-sm bg-black bg-opacity-40 rounded-[1.9rem] flex flex-col p-4 justify-end">
-        <h2 className="text-2xl font-semibold text-white mb-2">{name}</h2>
-        <p className="text-sm font-light text-white">{description}</p>
+const TrainerCard = ({ imageUrl, name, description }) => {
+  return (
+    <div className="relative m-4 w-[20.9rem] h-[25rem] perspective-1000">
+      <div className="relative w-full h-full duration-700 transform-style-preserve-3d hover:rotate-y-180">
+        <div
+          className="absolute w-full h-full backface-hidden rounded-[1.9rem] shadow-lg bg-cover bg-center"
+          style={{ backgroundImage: `url(${imageUrl})` }}
+        ></div>
+        <div
+          className="absolute w-full h-full backface-hidden bg-white bg-opacity-30 backdrop-blur-lg text-black rounded-[1.9rem] shadow-lg transform rotate-y-180 flex flex-col items-center justify-center p-4"
+        >
+          <h2 className="text-2xl font-semibold mb-2">{name}</h2>
+          <p className="text-sm font-light">{description}</p>
+        </div>
       </div>
-    )}
-  </div>
-);
+    </div>
+  );
+};
+
+const TrainerCardStatic = ({ imageUrl, width = "20.9rem" }) => {
+  return (
+    <div
+      className="relative m-4 h-[25rem] rounded-[1.9rem] shadow-lg bg-cover bg-center"
+      style={{ backgroundImage: `url(${imageUrl})`, width }}
+    ></div>
+  );
+};
 
 const MentorSection = () => (
-  <div className="flex flex-col md:flex-row md:justify-between items-start p-4">
+  <div className="flex flex-col md:flex-row md:justify-between items-start p-10">
     <div className="flex flex-col md:flex-row items-center md:items-start w-full md:w-auto mb-4 md:mb-0">
-      <TrainerCard imageUrl="assets/images/Rectangle34.jpeg" />
-      <TrainerCard imageUrl="assets/images/Rectangle35.jpeg" />
+      <TrainerCardStatic imageUrl={image4} width="10rem" />
+      <TrainerCardStatic imageUrl={image5} />
     </div>
     <div className="flex flex-col items-start md:ml-8">
-      <div className="mb-6">
+      <div className="mb-6 pt-20">
         <h3 className="text-lg font-medium uppercase text-black opacity-70 mb-1">
           Are you looking for a Mentor?
         </h3>
@@ -56,14 +75,19 @@ const Trainers = () => (
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a"
     />
     <div className="flex flex-wrap justify-center">
-      <TrainerCard imageUrl="assets/images/Rectangle37.jpeg" />
+      <TrainerCard imageUrl={image1}
+      name="Name"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+     />
       <TrainerCard
-        imageUrl="assets/images/Rectangle38.jpeg"
-        withOverlay
+        imageUrl={image2}
         name="Name"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
-      <TrainerCard imageUrl="assets/images/Rectangle39.jpeg" />
+      <TrainerCard imageUrl={image3}
+      name="Name"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+     />
     </div>
     <MentorSection />
   </div>
