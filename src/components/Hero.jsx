@@ -46,12 +46,6 @@ export const Hero = () => {
         </div>
 
         <div className="text-[#ffffff] pt-10 pb-10 m-7">
-          <h1 className="text-[40px]">2+ years</h1>
-          <p>Years experience</p>
-          <span>Experience in various workouts</span>
-        </div>
-
-        <div className="text-[#ffffff] pt-10 pb-10 m-7">
           <h1 className="text-[40px]">90%</h1>
           <p>Customer satisfaction</p>
           <span>Our community is growing fast</span>
