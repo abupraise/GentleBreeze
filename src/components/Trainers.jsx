@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import image1 from "../assets/coach.jpeg";
 import image2 from "../assets/coach1.jpeg";
 import image3 from "../assets/coach3.jpeg";
@@ -12,7 +14,7 @@ const SectionTitle = ({ title, description }) => (
   </div>
 );
 
-const TrainerCard = ({ imageUrl, name, description }) => {
+const TrainerCard = ({ imageUrl, name, description, instagramUrl, tiktokUrl }) => {
   return (
     <div className="relative m-4 w-[20.9rem] h-[25rem] perspective-1000">
       <div className="relative w-full h-full duration-700 transform-style-preserve-3d hover:rotate-y-180">
@@ -22,7 +24,23 @@ const TrainerCard = ({ imageUrl, name, description }) => {
         ></div>
         <div className="absolute w-full h-full backface-hidden bg-white bg-opacity-30 backdrop-blur-lg text-black rounded-[1.9rem] shadow-lg transform rotate-y-180 flex flex-col items-center justify-center p-4">
           <h2 className="text-2xl font-semibold mb-2">{name}</h2>
-          <p className="text-sm font-light">{description}</p>
+          <p className="text-sm font-light mb-4">{description}</p>
+          <div className="flex space-x-4">
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon
+                icon={faInstagram}
+                size="lg"
+                className="text-black hover:text-red-500 transition-colors duration-300"
+              />
+            </a>
+            <a href={tiktokUrl} target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon
+                icon={faTiktok}
+                size="lg"
+                className="text-black hover:text-red-500 transition-colors duration-300"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -76,19 +94,23 @@ const Trainers = () => (
       <TrainerCard
         imageUrl={image1}
         name="Alhassan Kutigi"
-        description="Position: Coach And Gym Manager."
-        
+        description="(Coach And Gym Manager)"
+        instagramUrl="https://www.instagram.com/alhassankutigi"
+        tiktokUrl="https://www.tiktok.com/@alhassankutigi"
       />
-      
       <TrainerCard
         imageUrl={image2}
         name="Sabiu Isah Galadima"
-        description="Position: Fitness Trainer"
+        description="(Fitness Trainer)"
+        instagramUrl="https://www.instagram.com/sabiu_isah"
+        tiktokUrl="https://www.tiktok.com/@sabiuisah"
       />
       <TrainerCard
         imageUrl={image3}
         name="Auwal Umar Mainika"
-        description="Position: Fitness Trainer"
+        description="(Fitness Trainer)"
+        instagramUrl="https://www.instagram.com/auwalumar"
+        tiktokUrl="https://www.tiktok.com/@auwalumar"
       />
     </div>
     <MentorSection />
