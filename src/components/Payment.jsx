@@ -1,7 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Payment = () => {
   const [billingPeriod, setBillingPeriod] = useState('Yearly');
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollContainerRef = useRef(null);
+
+  const plans = [
+    { plan: "Daily Plan", price: billingPeriod === 'Yearly' ? '$2' : '$60', description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"], availableFeatures: ["Feature 1", "Feature 2"], buttonColor: "bg-black", buttonTextColor: "text-white" },
+    { plan: "1 Month Plan", price: billingPeriod === 'Yearly' ? '$5' : '$60', description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"], availableFeatures: ["Feature 1", "Feature 2"], buttonColor: "bg-black", buttonTextColor: "text-white" },
+    { plan: "3 Months Plan", price: billingPeriod === 'Yearly' ? '$15' : '$180', description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"], availableFeatures: ["Feature 1", "Feature 2", "Feature 3"], cardColor: "bg-black", textColor: "text-white", buttonColor: "bg-white", buttonTextColor: "text-black", isPremium: true },
+    { plan: "1-On-1 Payment per Session", price: billingPeriod === 'Yearly' ? '$20' : '$240', description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"], availableFeatures: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"], buttonColor: "bg-black", buttonTextColor: "text-white" },
+    { plan: "6 Months Plan", price: billingPeriod === 'Yearly' ? '$25' : '$300', description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"], availableFeatures: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"], buttonColor: "bg-black", buttonTextColor: "text-white" },
+    { plan: "1 Year Plan", price: billingPeriod === 'Yearly' ? '$30' : '$360', description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"], availableFeatures: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"], buttonColor: "bg-black", buttonTextColor: "text-white" },
+  ];
+
+  const scrollLeft = () => {
+    scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    setActiveIndex((prevIndex) => (prevIndex - 1 + plans.length) % plans.length);
+  };
+
+  const scrollRight = () => {
+    scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    setActiveIndex((prevIndex) => (prevIndex + 1) % plans.length);
+  };
 
   return (
     <div className="bg-white flex flex-col items-center p-10 w-full">
@@ -10,7 +33,7 @@ const Payment = () => {
           <div className="text-opacity-40 mb-4 text-2xl font-signika text-black">
             Pricing Plan
           </div>
-          <span className="text-opacity-90 text-6xl font-signika font-bold uppercase text-black">
+          <span className="text-opacity-100 text-6xl font-signika font-bold uppercase text-black">
             Join Today
           </span>
         </div>
@@ -22,7 +45,7 @@ const Payment = () => {
             }`}
           >
             <span className="font-signika font-semibold text-lg">
-              Monthly
+              Gym
             </span>
           </button>
           <button
@@ -32,63 +55,44 @@ const Payment = () => {
             }`}
           >
             <span className="font-signika font-semibold text-lg">
-              Yearly
+              Yoga
             </span>
           </button>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-8 w-full lg:w-4/5">
-        <PricingCard 
-          plan="Beginner Plan" 
-          price={billingPeriod === 'Yearly' ? '$5' : '$60'} 
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"
-          features={["Feature 1", "Feature 2", "Feature 3", "Feature 4"]}
-          availableFeatures={["Feature 1", "Feature 2"]}
-          buttonColor="bg-black"
-          buttonTextColor="text-white"
-        />
-        <PricingCard 
-          plan="Premium Plan" 
-          price={billingPeriod === 'Yearly' ? '$15' : '$180'} 
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"
-          features={["Feature 1", "Feature 2", "Feature 3", "Feature 4"]}
-          availableFeatures={["Feature 1", "Feature 2", "Feature 3"]}
-          cardColor="bg-black"
-          textColor="text-white"
-          buttonColor="bg-white"
-          buttonTextColor="text-black"
-          isPremium
-        />
-        <PricingCard 
-          plan="Expert Plan" 
-          price={billingPeriod === 'Yearly' ? '$20' : '$240'} 
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"
-          features={["Feature 1", "Feature 2", "Feature 3", "Feature 4"]}
-          availableFeatures={["Feature 1", "Feature 2", "Feature 3", "Feature 4"]}
-          buttonColor="bg-black"
-          buttonTextColor="text-white"
-        />
+      <div className="relative w-full lg:w-4/5">
+        <button onClick={scrollLeft} className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+          <FontAwesomeIcon icon={faArrowLeft} size="2x" className="text-black hover:text-red-500" />
+        </button>
+        <div ref={scrollContainerRef} className="flex overflow-x-auto no-scrollbar gap-8">
+          {plans.map((plan, index) => (
+            <PricingCard key={index} {...plan} isActive={index === activeIndex} />
+          ))}
+        </div>
+        <button onClick={scrollRight} className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+          <FontAwesomeIcon icon={faArrowRight} size="2x" className="text-black hover:text-red-500" />
+        </button>
       </div>
     </div>
   );
-}
+};
 
-const PricingCard = ({ plan, price, description, features, availableFeatures, cardColor = "bg-white", textColor = "text-black", buttonColor = "bg-black", buttonTextColor = "text-white", isPremium = false }) => {
+const PricingCard = ({ plan, price, description, features, availableFeatures, cardColor = "bg-white", textColor = "text-black", buttonColor = "bg-black", buttonTextColor = "text-white", isPremium = false, isActive = false }) => {
   return (
-    <div className={`shadow-md rounded-2xl p-8 w-full lg:w-1/3 ${cardColor} ${textColor}`}>
+    <div className={`shadow-md rounded-2xl p-8 w-full lg:w-1/3 min-w-[20rem] ${isActive ? "bg-black text-white" : cardColor} ${isActive ? "text-white" : textColor}`}>
       <div className="mb-10">
-        <div className="text-opacity-70 mb-4 text-lg font-signika font-semibold">
+        <div className={`text-opacity-100 mb-4 text-lg font-signika font-semibold ${isActive ? "text-white" : ""}`}>
           {plan}
         </div>
         <div className="flex items-baseline mb-4">
-          <span className="text-opacity-90 text-6xl font-signika font-semibold mr-2">
+          <span className={`text-opacity-100 text-6xl font-signika font-semibold mr-2 ${isActive ? "text-white" : ""}`}>
             {price}
           </span>
-          <span className="text-opacity-90 text-lg font-signika font-semibold">
+          <span className={`text-opacity-100 text-lg font-signika font-semibold ${isActive ? "text-white" : ""}`}>
             / Month
           </span>
         </div>
-        <span className="text-opacity-50 text-lg font-signika font-light">
+        <span className={`text-opacity-100 text-lg font-signika font-light ${isActive ? "text-white" : ""}`}>
           {description}
         </span>
       </div>
@@ -108,17 +112,17 @@ const PricingCard = ({ plan, price, description, features, availableFeatures, ca
                 </svg>
               </div>
             )}
-            <span className={`text-lg font-signika font-normal ${textColor}`}>
+            <span className={`text-lg font-signika font-normal ${isActive ? "text-white" : textColor}`}>
               {feature}
             </span>
           </li>
         ))}
       </ul>
-      <button className={`rounded-2xl ${buttonColor} w-full py-4 ${buttonTextColor} font-signika font-bold text-lg`}>
+      <button className={`rounded-2xl ${isActive ? "bg-white text-black" : buttonColor} w-full py-4 ${isActive ? "text-black" : buttonTextColor} font-signika font-bold text-lg`}>
         Choose Plan
       </button>
     </div>
   );
-}
+};
 
 export default Payment;
