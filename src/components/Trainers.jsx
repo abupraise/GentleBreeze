@@ -1,9 +1,9 @@
-import React from 'react';
-import image1 from '../assets/Rectangle37.jpeg';
-import image2 from '../assets/Rectangle37.jpeg';
-import image3 from '../assets/Rectangle39.jpeg';
-import image4 from '../assets/Rectangle34.jpeg';
-import image5 from '../assets/Rectangle35.jpeg';
+import React from "react";
+import image1 from "../assets/coach.jpeg";
+import image2 from "../assets/coach1.jpeg";
+import image3 from "../assets/coach3.jpeg";
+import image4 from "../assets/Rectangle34.jpeg";
+import image5 from "../assets/Rectangle35.jpeg";
 
 const SectionTitle = ({ title, description }) => (
   <div className="mb-14 text-center max-w-4xl">
@@ -20,9 +20,7 @@ const TrainerCard = ({ imageUrl, name, description }) => {
           className="absolute w-full h-full backface-hidden rounded-[1.9rem] shadow-lg bg-cover bg-center"
           style={{ backgroundImage: `url(${imageUrl})` }}
         ></div>
-        <div
-          className="absolute w-full h-full backface-hidden bg-white bg-opacity-30 backdrop-blur-lg text-black rounded-[1.9rem] shadow-lg transform rotate-y-180 flex flex-col items-center justify-center p-4"
-        >
+        <div className="absolute w-full h-full backface-hidden bg-white bg-opacity-30 backdrop-blur-lg text-black rounded-[1.9rem] shadow-lg transform rotate-y-180 flex flex-col items-center justify-center p-4">
           <h2 className="text-2xl font-semibold mb-2">{name}</h2>
           <p className="text-sm font-light">{description}</p>
         </div>
@@ -75,19 +73,23 @@ const Trainers = () => (
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a"
     />
     <div className="flex flex-wrap justify-center">
-      <TrainerCard imageUrl={image1}
-      name="Name"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-     />
+      <TrainerCard
+        imageUrl={image1}
+        name="Alhassan Kutigi"
+        description="Position: Coach And Gym Manager."
+        
+      />
+      
       <TrainerCard
         imageUrl={image2}
-        name="Name"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        name="Sabiu Isah Galadima"
+        description="Position: Fitness Trainer"
       />
-      <TrainerCard imageUrl={image3}
-      name="Name"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-     />
+      <TrainerCard
+        imageUrl={image3}
+        name="Auwal Umar Mainika"
+        description="Position: Fitness Trainer"
+      />
     </div>
     <MentorSection />
   </div>

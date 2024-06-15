@@ -29,9 +29,6 @@ export const Hero = () => {
         </div>
 
         <div className="relative">
-          {/* <div className="absolute inset-0  z-0">
-            <img src={Rectangle} alt="rectangle" />
-          </div> */}
           <div>
             <img src={Man} alt="image" />
           </div>
@@ -43,12 +40,6 @@ export const Hero = () => {
           <h1 className="text-[40px]">100+</h1>
           <p>Happy customers</p>
           <span>Our community is growing fast</span>
-        </div>
-
-        <div className="text-[#ffffff] pt-10 pb-10 m-7">
-          <h1 className="text-[40px]">2+ years</h1>
-          <p>Years experience</p>
-          <span>Experience in various workouts</span>
         </div>
 
         <div className="text-[#ffffff] pt-10 pb-10 m-7">

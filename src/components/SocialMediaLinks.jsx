@@ -17,7 +17,7 @@ const SocialMediaLinks = () => {
         </li>
         <li className="flex items-center space-x-4">
           <FontAwesomeIcon icon={faInstagram} className="w-6 h-6 opacity-40 text-black" />
-          <span className="text-black opacity-40 font-signika text-lg">Instagram</span>
+          <a href="https://www.instagram.com/gentle_breeze.kn?igsh=MTlwcGJyZ2NmMWZtOQ=="><span className="text-black opacity-40 font-signika text-lg">Instagram</span></a>
         </li>
       </ul>
     </div>
