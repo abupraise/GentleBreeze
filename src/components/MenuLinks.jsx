@@ -8,31 +8,30 @@ const MenuLinks = () => {
         Menu
       </h3>
       <ul className="space-y-2">
-      <Link to="home" spy={true} smooth={true} duration={500}>
-        <li className="text-black opacity-40 font-signika text-lg">
-          {" "}
+        <Link to="home" spy={true} smooth={true} duration={500}>
+          <li className="text-black opacity-40 font-signika text-lg hover:text-red-500 hover:opacity-100 cursor-pointer">
             Home
-        </li>
+          </li>
         </Link>
         <Link to="about" spy={true} smooth={true} duration={500}>
-        <li className="text-black opacity-40 font-signika text-lg">
+          <li className="text-black opacity-40 font-signika text-lg hover:text-red-500 hover:opacity-100 cursor-pointer">
             About
-        </li>
+          </li>
         </Link>
         <Link to="trainers" spy={true} smooth={true} duration={500}>
-        <li className="text-black opacity-40 font-signika text-lg">
+          <li className="text-black opacity-40 font-signika text-lg hover:text-red-500 hover:opacity-100 cursor-pointer">
             Trainers
-        </li>
+          </li>
         </Link>
-        <Link to="trainers" spy={true} smooth={true} duration={500}>
-        <li className="text-black opacity-40 font-signika text-lg">
+        <Link to="plans" spy={true} smooth={true} duration={500}>
+          <li className="text-black opacity-40 font-signika text-lg hover:text-red-500 hover:opacity-100 cursor-pointer">
             Plans
-        </li>
+          </li>
         </Link>
-        <Link to="trainers" spy={true} smooth={true} duration={500}>
-        <li className="text-black opacity-40 font-signika text-lg">
+        <Link to="reviews" spy={true} smooth={true} duration={500}>
+          <li className="text-black opacity-40 font-signika text-lg hover:text-red-500 hover:opacity-100 cursor-pointer">
             Reviews
-        </li>
+          </li>
         </Link>
       </ul>
     </div>
