@@ -40,9 +40,7 @@ const Payment = () => {
         <div className="shadow-lg rounded-2xl bg-white flex h-12">
           <button
             onClick={() => setBillingPeriod('Monthly')}
-            className={`rounded-2xl w-24 text-center ${
-              billingPeriod === 'Monthly' ? 'bg-black text-white' : 'bg-white text-black'
-            }`}
+            className={`rounded-2xl w-24 text-center ${billingPeriod === 'Monthly' ? 'bg-black text-white' : 'bg-white text-black'}`}
           >
             <span className="font-signika font-semibold text-lg">
               Gym
@@ -50,9 +48,7 @@ const Payment = () => {
           </button>
           <button
             onClick={() => setBillingPeriod('Yearly')}
-            className={`rounded-2xl w-24 text-center ${
-              billingPeriod === 'Yearly' ? 'bg-black text-white' : 'bg-white text-black'
-            }`}
+            className={`rounded-2xl w-24 text-center ${billingPeriod === 'Yearly' ? 'bg-black text-white' : 'bg-white text-black'}`}
           >
             <span className="font-signika font-semibold text-lg">
               Yoga
@@ -60,16 +56,16 @@ const Payment = () => {
           </button>
         </div>
       </div>
-      <div className="relative w-full lg:w-4/5">
-        <button onClick={scrollLeft} className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
+      <div className="relative w-full lg:w-4/5 h-[40rem]">
+        <button onClick={scrollLeft} className="absolute left-[-2rem] top-1/2 transform -translate-y-1/2 z-10">
           <FontAwesomeIcon icon={faArrowLeft} size="2x" className="text-black hover:text-red-500" />
         </button>
-        <div ref={scrollContainerRef} className="flex overflow-x-auto no-scrollbar gap-8">
+        <div ref={scrollContainerRef} className="flex overflow-x-auto no-scrollbar gap-8 h-full items-center">
           {plans.map((plan, index) => (
             <PricingCard key={index} {...plan} isActive={index === activeIndex} />
           ))}
         </div>
-        <button onClick={scrollRight} className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+        <button onClick={scrollRight} className="absolute right-[-2rem] top-1/2 transform -translate-y-1/2 z-10">
           <FontAwesomeIcon icon={faArrowRight} size="2x" className="text-black hover:text-red-500" />
         </button>
       </div>
@@ -79,7 +75,7 @@ const Payment = () => {
 
 const PricingCard = ({ plan, price, description, features, availableFeatures, cardColor = "bg-white", textColor = "text-black", buttonColor = "bg-black", buttonTextColor = "text-white", isPremium = false, isActive = false }) => {
   return (
-    <div className={`shadow-md rounded-2xl p-8 w-full lg:w-1/3 min-w-[20rem] ${isActive ? "bg-black text-white" : cardColor} ${isActive ? "text-white" : textColor}`}>
+    <div className={`shadow-md rounded-2xl p-8 w-full lg:w-1/3 min-w-[20rem] transition-transform duration-500 transform ${isActive ? "bg-black text-white scale-105" : cardColor} ${isActive ? "text-white" : textColor}`}>
       <div className="mb-10">
         <div className={`text-opacity-100 mb-4 text-lg font-signika font-semibold ${isActive ? "text-white" : ""}`}>
           {plan}
@@ -100,7 +96,7 @@ const PricingCard = ({ plan, price, description, features, availableFeatures, ca
         {features.map((feature, index) => (
           <li key={index} className="flex items-center space-x-4">
             {availableFeatures.includes(feature) ? (
-              <div className={`${isPremium ? 'bg-white text-black' : 'bg-black text-white'} rounded-full w-5 h-5 flex items-center justify-center`}>
+              <div className={`rounded-full w-5 h-5 flex items-center justify-center ${isActive ? 'bg-white text-black' : 'bg-black text-white'}`}>
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
