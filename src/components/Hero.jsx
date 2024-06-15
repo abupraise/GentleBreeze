@@ -29,9 +29,6 @@ export const Hero = () => {
         </div>
 
         <div className="relative">
-          {/* <div className="absolute inset-0  z-0">
-            <img src={Rectangle} alt="rectangle" />
-          </div> */}
           <div>
             <img src={Man} alt="image" />
           </div>
