@@ -1,8 +1,8 @@
 import React from 'react';
 import icon1 from '../assets/Group 21.svg';
 import icon2 from '../assets/Group 24.svg';
-import icon3 from '../assets/Group 23.svg';
-import icon4 from '../assets/Group 22.svg';
+import icon3 from '../assets/Group 22.svg';
+import icon4 from '../assets/Group 23.svg';
 import image1 from '../assets/Rectangle 30.jpeg';
 import image2 from '../assets/Rectangle 31.jpeg';
 import image3 from '../assets/Rectangle 29.jpeg';
@@ -38,19 +38,19 @@ const FeatureCard = ({ title, description, icon }) => (
 
 const ImageCard = ({ imageUrl }) => (
   <div
-    className="m-4 w-64 h-44 bg-cover bg-center rounded-2xl shadow-lg"
+    className="m-4 w-64 h-64 bg-cover bg-center rounded-2xl shadow-lg"
     style={{ backgroundImage: `url(${imageUrl})` }}
   ></div>
 );
 
 const AboutUs = () => {
   return (
-    <div className="bg-white flex flex-col items-center p-16 md:p-24 box-border w-full">
+    <div className="bg-white flex flex-col items-center p-4 md:p-16 box-border w-full">
       <SectionTitle
         title="Why Choose Us"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
-      <div className="flex flex-wrap justify-center space-x-8">
+      <div className="flex flex-wrap justify-center items-center">
         <FeatureCard
           title="Trainer Qualifications"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
@@ -72,7 +72,7 @@ const AboutUs = () => {
           icon={icon4}
         />
       </div>
-      <div className="flex flex-wrap justify-center space-x-8 mt-16">
+      <div className="flex flex-wrap justify-center items-center mt-16">
         <ImageCard imageUrl={image1} />
         <ImageCard imageUrl={image2} />
         <ImageCard imageUrl={image3} />

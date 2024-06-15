@@ -22,11 +22,11 @@ const LandingPage = () => {
       <section id="trainers">
         <Trainers />
       </section>
-      <section id="reviews">
-        <Reviews />
-      </section>
       <section id="plans">
         <Payment />
+      </section>
+      <section id="reviews">
+        <Reviews />
       </section>
       <Contact />
       <Footer />
