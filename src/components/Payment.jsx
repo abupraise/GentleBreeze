@@ -65,9 +65,7 @@ const Payment = () => {
   ];
 
   const scrollLeft = () => {
-    setActiveIndex(
-      (prevIndex) => (prevIndex - 1 + plans.length) % plans.length
-    );
+    setActiveIndex((prevIndex) => (prevIndex - 1 + plans.length) % plans.length);
   };
 
   const scrollRight = () => {
@@ -84,7 +82,7 @@ const Payment = () => {
   }, [activeIndex]);
 
   return (
-    <div className="bg-white flex flex-col items-center p-10 w-full">
+    <div className="bg-white flex flex-col items-center p-10 w-full relative z-0">
       <div className="flex flex-col lg:flex-row justify-between w-full lg:w-5/6 mb-12">
         <div className="flex flex-col mb-8 lg:mb-0">
           <div className="text-opacity-40 mb-4 text-2xl font-signika text-black">
@@ -98,9 +96,7 @@ const Payment = () => {
           <button
             onClick={() => setBillingPeriod("Monthly")}
             className={`rounded-2xl w-24 text-center ${
-              billingPeriod === "Monthly"
-                ? "bg-black text-white"
-                : "bg-white text-black"
+              billingPeriod === "Monthly" ? "bg-black text-white" : "bg-white text-black"
             }`}
           >
             <span className="font-signika font-semibold text-lg">Gym</span>
@@ -108,9 +104,7 @@ const Payment = () => {
           <button
             onClick={() => setBillingPeriod("Yearly")}
             className={`rounded-2xl w-24 text-center ${
-              billingPeriod === "Yearly"
-                ? "bg-black text-white"
-                : "bg-white text-black"
+              billingPeriod === "Yearly" ? "bg-black text-white" : "bg-white text-black"
             }`}
           >
             <span className="font-signika font-semibold text-lg">Yoga</span>
@@ -120,7 +114,7 @@ const Payment = () => {
       <div className="relative w-full lg:w-[90%] h-[40rem]">
         <button
           onClick={scrollLeft}
-          className="absolute left-[-3rem] top-1/2 transform -translate-y-1/2 z-10"
+          className="absolute left-[-3rem] lg:left-[-4rem] top-1/2 transform -translate-y-1/2 z-20"
         >
           <FontAwesomeIcon
             icon={faArrowLeft}
@@ -133,19 +127,14 @@ const Payment = () => {
           className="flex overflow-x-auto no-scrollbar gap-8 h-full items-center"
         >
           {plans.map((plan, index) => (
-            <div key={index} style={index === 0 ? { marginLeft: "1rem" } : {}}>
-              <PricingCard
-                key={index}
-                {...plan}
-                isActive={index === activeIndex}
-                className="card"
-              />
+            <div key={index} className={index === 0 ? "ml-4 card" : "card"}>
+              <PricingCard key={index} {...plan} isActive={index === activeIndex} />
             </div>
           ))}
         </div>
         <button
           onClick={scrollRight}
-          className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2 z-10"
+          className="absolute right-[-3rem] lg:right-[-4rem] top-1/2 transform -translate-y-1/2 z-20"
         >
           <FontAwesomeIcon
             icon={faArrowRight}

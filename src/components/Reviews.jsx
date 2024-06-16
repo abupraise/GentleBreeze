@@ -45,7 +45,8 @@ const Reviews = () => {
   useEffect(() => {
     if (carouselRef.current) {
       const carousel = carouselRef.current;
-      const scrollToPosition = carousel.children[currentIndex].offsetLeft - carousel.children[0].offsetLeft;
+      const scrollToPosition =
+        carousel.children[currentIndex].offsetLeft - carousel.children[0].offsetLeft;
       carousel.scrollTo({
         left: scrollToPosition,
         behavior: "smooth",
@@ -54,12 +55,10 @@ const Reviews = () => {
   }, [currentIndex]);
 
   return (
-    <div className="bg-white p-6 md:p-20 relative flex flex-col items-center w-full h-auto">
+    <div className="bg-white p-6 md:p-20 relative flex flex-col items-center w-full h-auto z-0">
       <div className="w-full flex flex-col md:flex-row justify-between items-center mb-8">
         <div className="mb-4 md:mb-0">
-          <div className="opacity-40 text-lg font-signika font-normal text-black">
-            Reviews
-          </div>
+          <div className="opacity-40 text-lg font-signika font-normal text-black">Reviews</div>
           <span className="text-opacity-90 font-signika font-bold text-2xl md:text-4xl uppercase text-black">
             From Clients
           </span>
@@ -74,10 +73,7 @@ const Reviews = () => {
         </div>
         <div className="w-full md:w-2/3 flex flex-col items-center md:ml-[63px]">
           <div className="relative w-full">
-            <div
-              className="flex overflow-hidden w-full space-x-6 pt-12"
-              ref={carouselRef}
-            >
+            <div className="flex overflow-hidden w-full space-x-6 pt-12" ref={carouselRef}>
               {reviews.map((review, index) => (
                 <ReviewCard
                   key={index}
