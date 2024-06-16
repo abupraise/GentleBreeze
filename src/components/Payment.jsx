@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -65,16 +65,23 @@ const Payment = () => {
   ];
 
   const scrollLeft = () => {
-    scrollContainerRef.current.scrollBy({ left: -300, behavior: "smooth" });
     setActiveIndex(
       (prevIndex) => (prevIndex - 1 + plans.length) % plans.length
     );
   };
 
   const scrollRight = () => {
-    scrollContainerRef.current.scrollBy({ left: 300, behavior: "smooth" });
     setActiveIndex((prevIndex) => (prevIndex + 1) % plans.length);
   };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    const cardWidth = container.querySelector(".card").offsetWidth;
+    container.scrollTo({
+      left: activeIndex * (cardWidth + 32),
+      behavior: "smooth",
+    });
+  }, [activeIndex]);
 
   return (
     <div className="bg-white flex flex-col items-center p-10 w-full">
@@ -110,7 +117,7 @@ const Payment = () => {
           </button>
         </div>
       </div>
-      <div className="relative w-full lg:w-5/6 h-[40rem]">
+      <div className="relative w-full lg:w-[90%] h-[40rem]">
         <button
           onClick={scrollLeft}
           className="absolute left-[-3rem] top-1/2 transform -translate-y-1/2 z-10"
@@ -126,11 +133,14 @@ const Payment = () => {
           className="flex overflow-x-auto no-scrollbar gap-8 h-full items-center"
         >
           {plans.map((plan, index) => (
-            <PricingCard
-              key={index}
-              {...plan}
-              isActive={index === activeIndex}
-            />
+            <div key={index} style={index === 0 ? { marginLeft: "1rem" } : {}}>
+              <PricingCard
+                key={index}
+                {...plan}
+                isActive={index === activeIndex}
+                className="card"
+              />
+            </div>
           ))}
         </div>
         <button
@@ -160,12 +170,13 @@ const PricingCard = ({
   buttonTextColor = "text-white",
   isPremium = false,
   isActive = false,
+  className,
 }) => {
   return (
     <div
       className={`shadow-md rounded-2xl p-8 w-full lg:w-1/3 min-w-[20rem] transition-transform duration-500 transform ${
         isActive ? "bg-black text-white scale-105" : cardColor
-      } ${isActive ? "text-white" : textColor}`}
+      } ${isActive ? "text-white" : textColor} ${className}`}
     >
       <div className="mb-10">
         <div
