@@ -1,9 +1,6 @@
 import React from "react";
-import Man from "../assets/man.jpg";
+import Man from "../assets/Hbg22.png";
 import Insta from "../assets/instagram.jpg";
-import Money from "../assets/money.jpg";
-import Time from "../assets/time.jpg";
-import Weight from "../assets/weight.jpg";
 //import Rectangle from "../assets/Rectangle.jpg";
 import Boxing from "../assets/boxing.jpg";
 
@@ -28,8 +25,9 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="relative">
-          <div>
+        <div className="relative flex justify-center items-center">
+          <div className="absolute left-[17.45rem] top-[0rem] w-[441px] h-[43.65rem] bg-[#1F1F1F] opacity-100 z-0"></div>
+          <div className="relative z-10">
             <img src={Man} alt="image" />
           </div>
         </div>
@@ -51,3 +49,5 @@ export const Hero = () => {
     </div>
   );
 };
+
+export default Hero;
