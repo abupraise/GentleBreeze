@@ -28,7 +28,7 @@ const Payment = () => {
 
   return (
     <div className="bg-white flex flex-col items-center p-10 w-full">
-      <div className="flex flex-col lg:flex-row justify-between w-full lg:w-4/5 mb-12">
+      <div className="flex flex-col lg:flex-row justify-between w-full lg:w-5/6 mb-12">
         <div className="flex flex-col mb-8 lg:mb-0">
           <div className="text-opacity-40 mb-4 text-2xl font-signika text-black">
             Pricing Plan
@@ -56,8 +56,8 @@ const Payment = () => {
           </button>
         </div>
       </div>
-      <div className="relative w-full lg:w-4/5 h-[40rem]">
-        <button onClick={scrollLeft} className="absolute left-[-2rem] top-1/2 transform -translate-y-1/2 z-10">
+      <div className="relative w-full lg:w-5/6 h-[40rem]">
+        <button onClick={scrollLeft} className="absolute left-[-3rem] top-1/2 transform -translate-y-1/2 z-10">
           <FontAwesomeIcon icon={faArrowLeft} size="2x" className="text-black hover:text-red-500" />
         </button>
         <div ref={scrollContainerRef} className="flex overflow-x-auto no-scrollbar gap-8 h-full items-center">
@@ -65,7 +65,7 @@ const Payment = () => {
             <PricingCard key={index} {...plan} isActive={index === activeIndex} />
           ))}
         </div>
-        <button onClick={scrollRight} className="absolute right-[-2rem] top-1/2 transform -translate-y-1/2 z-10">
+        <button onClick={scrollRight} className="absolute right-[-3rem] top-1/2 transform -translate-y-1/2 z-10">
           <FontAwesomeIcon icon={faArrowRight} size="2x" className="text-black hover:text-red-500" />
         </button>
       </div>
