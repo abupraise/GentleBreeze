@@ -2,31 +2,53 @@ import React from "react";
 import Man from "../assets/Hbg22.png";
 import Insta from "../assets/instagram.jpg";
 import CountUp from "react-countup";
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
-export const Hero = () => {
+const Hero = () => {
   return (
     <div>
-      <div className="grid grid-cols-2">
-        <div className="py-10 px-10">
-          <div className="text-[60px] pb-5">
-            <h1>ELEVATE YOUR </h1>
-            <span>WORKOUT</span>
-          </div>
+      <div className="grid grid-cols-2 relative">
+        <div className="py-10 px-20">
+          <motion.div
+            className="text-[60px] pt-20 pb-5"
+            animate={{ x: [-20, 0], opacity: [0, 1] }}
+            transition={{ duration: 1 }}
+          >
+            <h1 className="font-bold">ELEVATE YOUR </h1>
+            <span className="font-bold">WORKOUT</span>
+          </motion.div>
 
           <div className="opacity-40">
             <p>Welcome to Gentle Breeze fitness centre...</p>
           </div>
 
-          <div className="py-5 px-10">
-            <a href="https://www.instagram.com/gentle_breeze.kn?igsh=MTlwcGJyZ2NmMWZtOQ==">
+          <div className="flex items-center py-5 space-x-4">
+            {/* <a href="https://www.instagram.com/gentle_breeze.kn?igsh=MTlwcGJyZ2NmMWZtOQ==">
               <img src={Insta} alt="instagram" />
-            </a>
+            </a> */}
+            <motion.a
+              href="#"
+              className="bg-red-500 text-white w-12 h-12 flex items-center justify-center rounded-full z-20"
+              whileHover={{ scale: 1.1 }}
+              animate={{
+                scale: [1, 1.2, 1],
+                transition: {
+                  duration: 1,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                },
+              }}
+            >
+              <FontAwesomeIcon icon={faPlay} />
+            </motion.a>
           </div>
         </div>
 
         <div className="relative flex justify-center items-center">
           <div className="absolute left-[17.45rem] top-[0rem] w-[441px] h-[43.65rem] bg-[#1F1F1F] opacity-100 z-0"></div>
-          <div className="relative z-0">
+          <div className="relative">
             <img src={Man} alt="image" />
           </div>
         </div>

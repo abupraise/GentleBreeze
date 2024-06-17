@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
     <div className="flex items-center justify-center py-5 text-2xl sticky top-0 bg-white bg-opacity-30 backdrop-blur-md shadow-lg z-10">
       <Link
@@ -57,3 +57,5 @@ export const Navbar = () => {
     </div>
   );
 };
+
+export default Navbar;
