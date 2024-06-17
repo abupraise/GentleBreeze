@@ -30,7 +30,7 @@ const Hero = () => {
             </a> */}
             <motion.a
               href="#"
-              className="bg-red-500 text-white w-12 h-12 flex items-center justify-center rounded-full z-20"
+              className="bg-red-500 text-white w-12 h-12 flex items-center justify-center rounded-full"
               whileHover={{ scale: 1.1 }}
               animate={{
                 scale: [1, 1.2, 1],
