@@ -1,8 +1,7 @@
 import React from "react";
 import Man from "../assets/Hbg22.png";
 import Insta from "../assets/instagram.jpg";
-//import Rectangle from "../assets/Rectangle.jpg";
-import Boxing from "../assets/boxing.jpg";
+import CountUp from "react-countup";
 
 export const Hero = () => {
   return (
@@ -27,7 +26,7 @@ export const Hero = () => {
 
         <div className="relative flex justify-center items-center">
           <div className="absolute left-[17.45rem] top-[0rem] w-[441px] h-[43.65rem] bg-[#1F1F1F] opacity-100 z-0"></div>
-          <div className="relative z-10">
+          <div className="relative z-0">
             <img src={Man} alt="image" />
           </div>
         </div>
@@ -35,13 +34,25 @@ export const Hero = () => {
 
       <div className="bg-black flex flex-row items-center justify-center">
         <div className="text-[#ffffff] pt-10 pb-10 m-7">
-          <h1 className="text-[40px]">100+</h1>
+          <h1 className="text-[40px]">
+            <CountUp start={0} end={100} duration={3} />+
+          </h1>
           <p>Happy customers</p>
           <span>Our community is growing fast</span>
         </div>
 
         <div className="text-[#ffffff] pt-10 pb-10 m-7">
-          <h1 className="text-[40px]">90%</h1>
+          <h1 className="text-[40px]">
+            <CountUp start={0} end={2} duration={3} />+
+          </h1>
+          <p>Years experience</p>
+          <span>Experience in various workouts</span>
+        </div>
+
+        <div className="text-[#ffffff] pt-10 pb-10 m-7">
+          <h1 className="text-[40px]">
+            <CountUp start={0} end={90} duration={3} />%
+          </h1>
           <p>Customer satisfaction</p>
           <span>Our community is growing fast</span>
         </div>
