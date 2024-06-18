@@ -17,7 +17,7 @@ const Contact = () => {
           Call us Today
         </h2>
         <p className="text-white opacity-90 font-signika font-bold text-5xl uppercase mb-4">
-          +91 - 8200060000
+        +234 902 002 0403
         </p>
         <span className="text-white opacity-40 font-signika text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
