@@ -1,7 +1,7 @@
 import React from "react";
 import SocialMediaLinks from "../components/SocialMediaLinks";
 import MenuLinks from "../components/MenuLinks";
-import Logo from "/assets/images/logo.svg";
+import Logo from "/assets/images/GentleBreezeLogo - Black.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
