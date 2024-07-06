@@ -99,7 +99,7 @@ const Payment = () => {
               billingPeriod === "Monthly" ? "bg-black text-white" : "bg-white text-black"
             }`}
           >
-            <span className="font-signika font-semibold text-lg">Fitness</span>
+            <span className="font-signika font-semibold text-lg">Wellness</span>
           </button>
           <button
             onClick={() => setBillingPeriod("Yearly")}
@@ -107,7 +107,7 @@ const Payment = () => {
               billingPeriod === "Yearly" ? "bg-black text-white" : "bg-white text-black"
             }`}
           >
-            <span className="font-signika font-semibold text-lg">Wellness</span>
+            <span className="font-signika font-semibold text-lg">Fitness</span>
           </button>
         </div>
       </div>

@@ -10,7 +10,17 @@ const Footer = () => {
     <footer className="bg-white flex flex-col items-center w-full p-4 lg:p-8 relative">
       <div className="flex flex-col lg:flex-row justify-between items-start w-full lg:w-3/4 mt-16 space-y-8 lg:space-y-0 lg:space-x-16">
         <div className="flex flex-col items-start lg:items-start lg:text-left">
-          <img src={Logo} alt="Logo" className="w-28 h-12 mb-4" />
+          <div className="relative flex items-center mb-4 right-6">
+            <img src={Logo} alt="Logo" className="w-20 h-8" />
+            <div className="absolute left-14 z-10 flex flex-col text-right">
+              <span className="text-black opacity-70 font-bold text-lg leading-none">
+                Gentle
+              </span>
+              <span className="text-black opacity-70 font-bold text-lg leading-none">
+                Breeze
+              </span>
+            </div>
+          </div>
           <span className="text-black opacity-40 font-signika text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
