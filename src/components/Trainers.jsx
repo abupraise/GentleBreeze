@@ -56,14 +56,15 @@ const TrainerCardStatic = ({ imageUrl, width = "20.9rem" }) => {
   );
 };
 
+{/* removed */}
 // const MentorSection = () => (
 //   <div className="flex flex-col md:flex-row md:justify-between items-start p-10">
 //     <div className="flex flex-col md:flex-row items-center md:items-start w-full md:w-auto mb-4 md:mb-0">
 //       <TrainerCardStatic imageUrl={image4} width="10rem" />
 //       <TrainerCardStatic imageUrl={image5} />
 //     </div>
-//     {/* removed */}
-//     {/* <div className="flex flex-col items-start md:ml-8">
+    
+//     <div className="flex flex-col items-start md:ml-8">
 //       <div className="mb-6 pt-20">
 //         <h3 className="text-lg font-medium uppercase text-black opacity-70 mb-1">
 //           Are you looking for a Mentor?
@@ -81,10 +82,11 @@ const TrainerCardStatic = ({ imageUrl, width = "20.9rem" }) => {
 //       <button className="rounded-lg bg-black text-white py-2 px-4 font-semibold">
 //         Explore More
 //       </button>
-//     </div> */}
-//     {/* removed */}
+//     </div>
+    
 //   </div>
 // );
+{/* removed */}
 
 const Trainers = () => (
   <div className="bg-white flex flex-col items-center p-8 md:p-16">
