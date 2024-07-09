@@ -10,22 +10,22 @@ const Reviews = () => {
       name: "John Doe",
       rating: 4,
       reviewText:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "I love the friendly atmosphere at Gentle Breeze Gym. The trainers are fantastic and have really helped me improve my fitness.",
     },
     {
       name: "Jane Smith",
       rating: 5,
-      reviewText: "Amazing experience! Highly recommend.",
+      reviewText: "The community here is so supportive and welcoming. I've made great progress and wonderful friends along the way.",
     },
     {
       name: "Alice Johnson",
       rating: 3,
-      reviewText: "It was okay, could be better.",
+      reviewText: "Gentle Breeze Gym has top-notch facilities and the classes are amazing. I've never felt more motivated to work out!",
     },
     {
       name: "Bob Brown",
       rating: 2,
-      reviewText: "Not satisfied with the service.",
+      reviewText: "Joining Gentle Breeze Gym was the best decision I’ve made. The personalized training plans have really helped me achieve my goals.",
     },
   ];
 
