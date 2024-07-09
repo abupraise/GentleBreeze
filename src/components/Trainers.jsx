@@ -4,8 +4,8 @@ import { faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import image1 from "../assets/coach.jpeg";
 import image2 from "../assets/coach1.jpeg";
 import image3 from "../assets/coach3.jpeg";
-import image4 from "../assets/Rectangle34.jpeg";
-import image5 from "../assets/Rectangle35.jpeg";
+// import image4 from "../assets/Rectangle34.jpeg";
+// import image5 from "../assets/Rectangle35.jpeg";
 
 const SectionTitle = ({ title, description }) => (
   <div className="mb-14 text-center max-w-4xl">
@@ -119,7 +119,7 @@ const Trainers = () => (
         tiktokUrl="https://www.tiktok.com/@a_u_mainika?_t=8nEHu8zHjtu&_r=1"
       />
     </div>
-    <MentorSection />
+    {/* <MentorSection /> */}
   </div>
 );
 
