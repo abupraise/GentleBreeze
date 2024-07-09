@@ -62,7 +62,7 @@ const MentorSection = () => (
       <TrainerCardStatic imageUrl={image4} width="10rem" />
       <TrainerCardStatic imageUrl={image5} />
     </div>
-    <div className="flex flex-col items-start md:ml-8">
+    {/* <div className="flex flex-col items-start md:ml-8">
       <div className="mb-6 pt-20">
         <h3 className="text-lg font-medium uppercase text-black opacity-70 mb-1">
           Are you looking for a Mentor?
@@ -80,7 +80,7 @@ const MentorSection = () => (
       <button className="rounded-lg bg-black text-white py-2 px-4 font-semibold">
         Explore More
       </button>
-    </div>
+    </div> */}
   </div>
 );
 
