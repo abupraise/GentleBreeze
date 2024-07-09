@@ -88,7 +88,9 @@ const Trainers = () => (
   <div className="bg-white flex flex-col items-center p-8 md:p-16">
     <SectionTitle
       title="Meet Our Trainers"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna a"
+      description="At Gentle Breeze Gym, our team of expert trainers are dedicated to helping you achieve your fitness goals. 
+      With years of experience and a passion for wellness, our trainers provide personalized guidance and support every step of the way. 
+      Join us and benefit from their expertise and motivation, ensuring a successful and enjoyable fitness journey."
     />
     <div className="flex flex-wrap justify-center">
       <TrainerCard

@@ -20,9 +20,7 @@ const Contact = () => {
         +234 902 002 0403
         </p>
         <span className="text-white opacity-40 font-signika text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis
+          Email: GENTLEBREEZE005@gmail.com
         </span>
       </div>
     </div>

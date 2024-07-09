@@ -21,7 +21,14 @@ const Hero = () => {
           </motion.div>
 
           <div className="opacity-40">
-            <p>Welcome to Gentle Breeze fitness centre...</p>
+           <span>Welcome to Gentle Breeze Gym!</span>
+           <p>
+At Gentle Breeze, we believe in fostering a welcoming and supportive environment for all fitness levels.
+ Whether you're just starting your fitness journey or looking to take your workouts to the next level, 
+our state-of-the-art facilities and dedicated trainers are here to help you achieve your goals. 
+Join us and experience a fitness community that values your well-being and growth every step of the way.
+Feel the gentle breeze of progress and transformation at Gentle Breeze Gym. Let's get fit together!
+          </p>
           </div>
 
           <div className="flex items-center py-5 space-x-4">

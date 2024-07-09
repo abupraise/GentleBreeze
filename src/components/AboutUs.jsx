@@ -3,9 +3,9 @@ import icon1 from '../assets/Group 21.svg';
 import icon2 from '../assets/Group 24.svg';
 import icon3 from '../assets/Group 22.svg';
 import icon4 from '../assets/Group 23.svg';
-import image1 from '../assets/Rectangle 30.jpeg';
-import image2 from '../assets/Rectangle 31.jpeg';
-import image3 from '../assets/Rectangle 29.jpeg';
+import image1 from '../assets/snooker.jpg';
+import image2 from '../assets/gym.jpg';
+import image3 from '../assets/yoga.jpg';
 
 const SectionTitle = ({ title, description }) => (
   <div className="mb-14 text-center max-w-4xl">
@@ -48,27 +48,30 @@ const AboutUs = () => {
     <div className="bg-white flex flex-col items-center p-4 md:p-16 box-border w-full">
       <SectionTitle
         title="Why Choose Us"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        description="At Gentle Breeze Gym, we offer state-of-the-art facilities designed to meet all your fitness needs. 
+        Our certified trainers provide personalized workout plans to help you reach your goals, and our welcoming community creates a supportive and motivating environment. 
+        We take a holistic approach to fitness, offering not just workout options but also nutritional guidance and wellness programs to enhance your overall well-being. 
+        Plus, with flexible membership options, you can find the perfect fit for your lifestyle and schedule. Experience the Gentle Breeze difference, where your fitness journey becomes a breeze."
       />
       <div className="flex flex-wrap justify-center items-center">
         <FeatureCard
           title="Trainer Qualifications"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+          description="Our trainners are highly professional and dedicated to helping you achieve your fitness goals"
           icon={icon1}
         />
         <FeatureCard
           title="Facility Amenities"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+          description="Our fitness equipments, dynamic group classes, and luxurious amenities like relaxation lounge, all designed to enhance your workout experience."
           icon={icon2}
         />
         <FeatureCard
           title="Membership Cost"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+          description="We offer flexible membership options for our customers such as daily, monthly, and yearly."
           icon={icon3}
         />
         <FeatureCard
           title="Operating Hours"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+          description="We are open everyday."
           icon={icon4}
         />
       </div>
