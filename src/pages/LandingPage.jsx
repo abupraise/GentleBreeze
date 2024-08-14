@@ -9,6 +9,7 @@ import Hero from "../components/Hero";
 import AboutUs from "../components/AboutUs";
 import Trainers from "../components/Trainers";
 import ScrollToTopButton from "../components/ScrollToTopButton";
+import Service from "../components/Service";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -37,6 +38,7 @@ const LandingPage = () => {
       >
         <AboutUs />
       </motion.section>
+      <Service />
       <motion.section
         id="trainers"
         initial="hidden"
@@ -46,6 +48,7 @@ const LandingPage = () => {
       >
         <Trainers />
       </motion.section>
+      
       <motion.section
         id="plans"
         initial="hidden"
