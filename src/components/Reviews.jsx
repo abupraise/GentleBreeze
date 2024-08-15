@@ -7,25 +7,25 @@ import Reviewers from "./Reviewers";
 const Reviews = () => {
   const reviews = [
     {
-      name: "John Doe",
+      name: "Ahmed Hamisu Alhassan",
       rating: 4,
       reviewText:
-        "I love the friendly atmosphere at Gentle Breeze Gym. The trainers are fantastic and have really helped me improve my fitness.",
+        "Since I joined GB gym in february, I have lost more than 10kg of fat, built more endurance and even some muscles.",
     },
     {
-      name: "Jane Smith",
+      name: "Sammuel Utulu",
       rating: 5,
       reviewText: "The community here is so supportive and welcoming. I've made great progress and wonderful friends along the way.",
     },
     {
-      name: "Alice Johnson",
+      name: "Fa'iza Adam",
       rating: 3,
-      reviewText: "Gentle Breeze Gym has top-notch facilities and the classes are amazing. I've never felt more motivated to work out!",
+      reviewText: "I love how the coaches attend to thier clients at GB gym, they give you attention to detail and make sure you get value for your money.",
     },
     {
-      name: "Bob Brown",
-      rating: 2,
-      reviewText: "Joining Gentle Breeze Gym was the best decision I’ve made. The personalized training plans have really helped me achieve my goals.",
+      name: "Usman Yusuf",
+      rating: 4,
+      reviewText: "One of the best gym centre's in Kano, we can't thank you enough for what you have done for us, we have improved so much, and our performance in the game has improved.",
     },
   ];
 
@@ -60,12 +60,12 @@ const Reviews = () => {
         <div className="mb-4 md:mb-0">
           <div className="opacity-40 text-lg font-signika font-normal text-black">Reviews</div>
           <span className="text-opacity-90 font-signika font-bold text-2xl md:text-4xl uppercase text-black">
-            From Clients
+            From Our Clients
           </span>
         </div>
-        <button className="bg-black text-white py-3 px-6 md:px-8 rounded-lg font-signika font-bold text-base">
+        {/* <button className="bg-black text-white py-3 px-6 md:px-8 rounded-lg font-signika font-bold text-base">
           + Give Review
-        </button>
+        </button> */}
       </div>
       <div className="flex flex-col md:flex-row w-full">
         <div className="w-full md:w-1/3 mb-8 md:mb-0">
