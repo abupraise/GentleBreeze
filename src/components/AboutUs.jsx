@@ -3,9 +3,9 @@ import icon1 from '../assets/Group 21.svg';
 import icon2 from '../assets/Group 24.svg';
 import icon3 from '../assets/Group 22.svg';
 import icon4 from '../assets/Group 23.svg';
-import image1 from '../assets/WhatsApp Image 2024-08-02 at 17.11.22.jpeg';
-import image2 from '../assets/2151207438.jpg';
-import image3 from '../assets/WhatsApp Image 2024-08-02 at 17.11.23.jpeg';
+import image1 from '../assets/pool.jpeg';
+import image2 from '../assets/fitness.jpeg';
+import image3 from '../assets/wellness.jpeg';
 
 const SectionTitle = ({ title, description }) => (
   <div className="mb-14 text-center max-w-4xl">

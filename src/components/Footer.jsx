@@ -22,9 +22,7 @@ const Footer = () => {
             </div>
           </div>
           <span className="text-black opacity-40 font-signika text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis
+            No. 5 Kabuga off Gwarzo road, opposite FCE, near KFC/Rufaidah mart, Kano.
           </span>
         </div>
         <MenuLinks />
