@@ -4,8 +4,8 @@ import { faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import image1 from "../assets/coach.jpeg";
 import image2 from "../assets/coach1.jpeg";
 import image3 from "../assets/coach3.jpeg";
-// import image4 from "../assets/Rectangle34.jpeg";
-// import image5 from "../assets/Rectangle35.jpeg";
+import image4 from "../assets/WhatsApp Image 2024-08-02 at 17.11.22.jpeg";
+import image5 from "../assets/2151207438.jpg";
 
 const SectionTitle = ({ title, description }) => (
   <div className="mb-14 text-center max-w-4xl">
@@ -56,37 +56,35 @@ const TrainerCardStatic = ({ imageUrl, width = "20.9rem" }) => {
   );
 };
 
-{/* removed */}
-// const MentorSection = () => (
-//   <div className="flex flex-col md:flex-row md:justify-between items-start p-10">
-//     <div className="flex flex-col md:flex-row items-center md:items-start w-full md:w-auto mb-4 md:mb-0">
-//       <TrainerCardStatic imageUrl={image4} width="10rem" />
-//       <TrainerCardStatic imageUrl={image5} />
-//     </div>
+
+const MentorSection = () => (
+  <div className="flex flex-col md:flex-row md:justify-between items-start p-10 pt-20">
+    <div className="flex flex-col md:flex-row items-center md:items-start w-full md:w-auto mb-4 md:mb-0">
+      <TrainerCardStatic imageUrl={image4} width="15rem" />
+      <TrainerCardStatic imageUrl={image5} width="25rem"/>
+    </div>
     
-//     <div className="flex flex-col items-start md:ml-8">
-//       <div className="mb-6 pt-20">
-//         <h3 className="text-lg font-medium uppercase text-black opacity-70 mb-1">
-//           Are you looking for a Mentor?
-//         </h3>
-//         <h2 className="text-4xl font-bold uppercase text-black opacity-90 mb-1">
-//           Coaches
-//         </h2>
-//         <p className="text-lg font-light text-black opacity-40">
-//           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-//           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-//           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-//           aliquip ex ea commodo consequat.
-//         </p>
-//       </div>
-//       <button className="rounded-lg bg-black text-white py-2 px-4 font-semibold">
-//         Explore More
-//       </button>
-//     </div>
+    <div className="flex flex-col items-start md:ml-8">
+      <div className="mb-6 pt-20">
+        <h2 className="text-4xl font-bold uppercase text-black opacity-90 mb-1">
+          Our Services
+        </h2>
+
+        <div className="text-lg font-light text-black opacity-40">  
+        <li>Hike and Retreats (Small Groups)</li>
+        <li>Weekly Athletes BootCamp (Group / Individual Session)</li>
+        <li>Corporate Wellness</li>
+        <li>Team Bonding Activities</li>
+        <li>More Coming Soon...</li>
+        </div>
+        
+      </div>
+
+    </div>
     
-//   </div>
-// );
-{/* removed */}
+  </div>
+);
+
 
 const Trainers = () => (
   <div className="bg-white flex flex-col items-center p-8 md:p-16">
@@ -119,7 +117,7 @@ const Trainers = () => (
         tiktokUrl="https://www.tiktok.com/@a_u_mainika?_t=8nEHu8zHjtu&_r=1"
       />
     </div>
-    {/* <MentorSection /> */}
+    <MentorSection />
   </div>
 );
 
