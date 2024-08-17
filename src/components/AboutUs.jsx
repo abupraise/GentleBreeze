@@ -9,7 +9,7 @@ import image3 from '../assets/wellness.jpeg';
 
 const SectionTitle = ({ title, description }) => (
   <div className="mb-14 text-center max-w-4xl">
-    <h1 className="opacity-90 text-4xl font-bold mb-4 text-black">
+    <h1 className="opacity-90 text-4xl font-bold mb-4 mt-12 text-black">
       {title}
     </h1>
     <p className="opacity-40 text-lg font-light text-black">

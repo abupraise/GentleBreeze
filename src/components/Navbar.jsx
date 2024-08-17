@@ -60,18 +60,19 @@ const Navbar = () => {
 
   return (
     <div
-      className={`bg-white bg-opacity-30 backdrop-blur-md shadow-lg fixed top-0 w-full z-10 transition-transform duration-500 ${
+      className={`bg-white bg-opacity-30 backdrop-blur-md shadow-lg fixed top-0 w-full max-w-screen-2xl mx-auto z-10 transition-transform duration-500 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="flex items-center justify-between py-5 px-4 md:px-10">
+      <div className="flex items-center justify-between py-5 px-2 sm:px-4 md:px-10">
+        {" "}
         <div className="relative flex items-center">
-          <img src={Logo} alt="Logo" className="w-20 h-8 mr-2" />
-          <div className="absolute left-14 z-10 flex flex-col text-right">
-            <span className="text-black opacity-70 font-bold text-lg leading-none">
+          <img src={Logo} alt="Logo" className="w-16 h-6 sm:w-20 sm:h-8 mr-2" />
+          <div className="absolute left-12 sm:left-14 z-10 flex flex-col text-right">
+            <span className="text-black opacity-70 font-bold text-sm sm:text-lg leading-none">
               Gentle
             </span>
-            <span className="text-black opacity-70 font-bold text-lg leading-none">
+            <span className="text-black opacity-70 font-bold text-sm sm:text-lg leading-none">
               Breeze
             </span>
           </div>
@@ -95,12 +96,12 @@ const Navbar = () => {
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
-            className="text-black focus:outline-none"
+            className="text-black focus:outline-none p-2"
           >
             <div className={`hamburger ${isOpen ? "open" : ""}`}>
-              <span className="block w-8 h-0.5 bg-black my-1"></span>
-              <span className="block w-8 h-0.5 bg-black my-1"></span>
-              <span className="block w-8 h-0.5 bg-black my-1"></span>
+              <span className="block w-6 sm:w-8 h-0.5 bg-black my-1"></span>
+              <span className="block w-6 sm:w-8 h-0.5 bg-black my-1"></span>
+              <span className="block w-6 sm:w-8 h-0.5 bg-black my-1"></span>
             </div>
           </button>
         </div>
@@ -108,16 +109,46 @@ const Navbar = () => {
       <div
         className={`${
           isOpen ? "flex" : "hidden"
-        } flex-col items-center md:hidden bg-white w-full py-5`}
+        } flex-col items-center md:hidden bg-white w-full py-2 sm:py-5`}
       >
-        <NavLink to="home" onClick={() => setIsOpen(false)}>Home</NavLink>
-        <NavLink to="about" onClick={() => setIsOpen(false)}>About</NavLink>
-        <NavLink to="trainers" onClick={() => setIsOpen(false)}>Trainers</NavLink>
-        <NavLink to="plans" onClick={() => setIsOpen(false)}>Plans</NavLink>
-        <NavLink to="reviews" onClick={() => setIsOpen(false)}>Reviews</NavLink>
+        <NavLink
+          to="home"
+          onClick={() => setIsOpen(false)}
+          className="py-2 w-full text-center"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="about"
+          onClick={() => setIsOpen(false)}
+          className="py-2 w-full text-center"
+        >
+          About
+        </NavLink>
+        <NavLink
+          to="trainers"
+          onClick={() => setIsOpen(false)}
+          className="py-2 w-full text-center"
+        >
+          Trainers
+        </NavLink>
+        <NavLink
+          to="plans"
+          onClick={() => setIsOpen(false)}
+          className="py-2 w-full text-center"
+        >
+          Plans
+        </NavLink>
+        <NavLink
+          to="reviews"
+          onClick={() => setIsOpen(false)}
+          className="py-2 w-full text-center"
+        >
+          Reviews
+        </NavLink>
         <RouterLink
           to="/gallery"
-          className="py-2 cursor-pointer hover:text-red-500"
+          className="py-2 w-full text-center cursor-pointer hover:text-red-500"
           onClick={() => setIsOpen(false)}
         >
           Gallery

@@ -41,7 +41,7 @@ const Hero = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 relative">
         <div className="py-10 px-5 md:px-20 text-center md:text-left">
           <motion.div
-            className="text-[40px] md:text-[60px] pt-10 md:pt-20"
+            className="text-[40px] md:text-[60px] pt-32 md:pt-48"
             animate={{ x: [-20, 0], opacity: [0, 1] }}
             transition={{ duration: 1 }}
           >
@@ -49,15 +49,11 @@ const Hero = () => {
             <span className="font-bold">Gentle Breeze Gym</span>
           </motion.div>
           <div className="opacity-40 mt-4">
-            <span>Elevate your workout here!</span>
             <p>
-              At Gentle Breeze Gym, we foster a welcoming environment for all
-              fitness levels. Whether you're starting your fitness journey or
-              aiming to advance, our state-of-the-art facilities and dedicated
-              trainers are here to support you. Join our community that values
-              well-being and growth. Feel the progress and transformation at
-              Gentle Breeze Gym. Let's get fit together!
+              Whether you're just starting or pushing your limits, our top-notch
+              facilities and supportive trainers are here to guide you.
             </p>
+            <span>Join us and elevate your workout journey today!</span>
           </div>
         </div>
 
@@ -69,10 +65,10 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Centered Play Button */}
       <motion.button
         onClick={openModal}
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 text-white w-20 h-20 flex items-center justify-center rounded-full z-10"
+        className="absolute top-[25%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 text-white w-20 h-20 hidden md:flex items-center justify-center rounded-full z-10"
+        style={{ backgroundColor: "#ED3833" }}
         whileHover={{ scale: 1.1 }}
         animate={{
           scale: [1, 1.2, 1],

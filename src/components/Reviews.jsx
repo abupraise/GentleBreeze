@@ -13,7 +13,7 @@ const Reviews = () => {
         "Since I joined GB gym in february, I have lost more than 10kg of fat, built more endurance and even some muscles.",
     },
     {
-      name: "Sammuel Utulu",
+      name: "Samuel Utulu",
       rating: 5,
       reviewText: "The community here is so supportive and welcoming. I've made great progress and wonderful friends along the way.",
     },
