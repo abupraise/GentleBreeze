@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import Logo from "/assets/images/GentleBreezeLogo - Black.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -15,10 +17,8 @@ const Navbar = () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop && scrollTop > 200) {
-      // Scroll Down
       setIsVisible(false);
     } else if (scrollTop < lastScrollTop || scrollTop < 200) {
-      // Scroll Up
       setIsVisible(true);
     }
 
@@ -31,6 +31,32 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollTop]);
+
+  const NavLink = ({ to, children }) => {
+    if (location.pathname === "/") {
+      return (
+        <ScrollLink
+          className="px-4 cursor-pointer hover:text-red-500"
+          activeClass="text-red-500"
+          to={to}
+          spy={true}
+          smooth={true}
+          duration={500}
+        >
+          {children}
+        </ScrollLink>
+      );
+    } else {
+      return (
+        <RouterLink
+          to={`/#${to}`}
+          className="px-4 cursor-pointer hover:text-red-500"
+        >
+          {children}
+        </RouterLink>
+      );
+    }
+  };
 
   return (
     <div
@@ -52,56 +78,18 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex justify-center w-full">
           <div className="flex items-center space-x-10">
-            <Link
+            <NavLink to="home">Home</NavLink>
+            <NavLink to="about">About</NavLink>
+            <NavLink to="trainers">Trainers</NavLink>
+            <NavLink to="plans">Plans</NavLink>
+            <NavLink to="reviews">Reviews</NavLink>
+            <RouterLink
+              to="/gallery"
               className="px-4 cursor-pointer hover:text-red-500"
-              activeClass="text-red-500"
-              to="home"
-              spy={true}
-              smooth={true}
-              duration={500}
+              activeClassName="text-red-500"
             >
-              Home
-            </Link>
-            <Link
-              className="px-4 cursor-pointer hover:text-red-500"
-              activeClass="text-red-500"
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              About
-            </Link>
-            <Link
-              className="px-4 cursor-pointer hover:text-red-500"
-              activeClass="text-red-500"
-              to="trainers"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              Trainers
-            </Link>
-            <Link
-              className="px-4 cursor-pointer hover:text-red-500"
-              activeClass="text-red-500"
-              to="plans"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              Plans
-            </Link>
-            <Link
-              className="px-4 cursor-pointer hover:text-red-500"
-              activeClass="text-red-500"
-              to="reviews"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
-              Reviews
-            </Link>
+              Gallery
+            </RouterLink>
           </div>
         </div>
         <div className="md:hidden">
@@ -122,61 +110,18 @@ const Navbar = () => {
           isOpen ? "flex" : "hidden"
         } flex-col items-center md:hidden bg-white w-full py-5`}
       >
-        <Link
+        <NavLink to="home" onClick={() => setIsOpen(false)}>Home</NavLink>
+        <NavLink to="about" onClick={() => setIsOpen(false)}>About</NavLink>
+        <NavLink to="trainers" onClick={() => setIsOpen(false)}>Trainers</NavLink>
+        <NavLink to="plans" onClick={() => setIsOpen(false)}>Plans</NavLink>
+        <NavLink to="reviews" onClick={() => setIsOpen(false)}>Reviews</NavLink>
+        <RouterLink
+          to="/gallery"
           className="py-2 cursor-pointer hover:text-red-500"
-          activeClass="text-red-500"
-          to="home"
-          spy={true}
-          smooth={true}
-          duration={500}
           onClick={() => setIsOpen(false)}
         >
-          Home
-        </Link>
-        <Link
-          className="py-2 cursor-pointer hover:text-red-500"
-          activeClass="text-red-500"
-          to="about"
-          spy={true}
-          smooth={true}
-          duration={500}
-          onClick={() => setIsOpen(false)}
-        >
-          About
-        </Link>
-        <Link
-          className="py-2 cursor-pointer hover:text-red-500"
-          activeClass="text-red-500"
-          to="trainers"
-          spy={true}
-          smooth={true}
-          duration={500}
-          onClick={() => setIsOpen(false)}
-        >
-          Trainers
-        </Link>
-        <Link
-          className="py-2 cursor-pointer hover:text-red-500"
-          activeClass="text-red-500"
-          to="plans"
-          spy={true}
-          smooth={true}
-          duration={500}
-          onClick={() => setIsOpen(false)}
-        >
-          Plans
-        </Link>
-        <Link
-          className="py-2 cursor-pointer hover:text-red-500"
-          activeClass="text-red-500"
-          to="reviews"
-          spy={true}
-          smooth={true}
-          duration={500}
-          onClick={() => setIsOpen(false)}
-        >
-          Reviews
-        </Link>
+          Gallery
+        </RouterLink>
       </div>
     </div>
   );
