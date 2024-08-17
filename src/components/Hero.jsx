@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Man from "../assets/Hero.png";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
@@ -6,19 +6,38 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
 
+Modal.setAppElement("#root");
+
 const Hero = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState("");
 
-  const openModal = () => {
+  const openModal = useCallback(() => {
+    const galleryVideos = [
+      "/assets/videos/video1.mp4",
+      "/assets/videos/video2.mp4",
+      "/assets/videos/video3.mp4",
+      "/assets/videos/video4.mp4",
+      "/assets/videos/video5.mp4",
+      "/assets/videos/video6.mp4",
+      "/assets/videos/video7.mp4",
+      "/assets/videos/video8.mp4",
+      "/assets/videos/video9.mp4",
+      "/assets/videos/video10.mp4",
+    ];
+    const randomVideo =
+      galleryVideos[Math.floor(Math.random() * galleryVideos.length)];
+    setCurrentVideo(randomVideo);
     setModalIsOpen(true);
-  };
+  }, []);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setModalIsOpen(false);
-  };
+    setCurrentVideo("");
+  }, []);
 
   return (
-    <div>
+    <div className="relative">
       <div className="grid grid-cols-1 md:grid-cols-2 relative">
         <div className="py-10 px-5 md:px-20 text-center md:text-left">
           <motion.div
@@ -26,28 +45,11 @@ const Hero = () => {
             animate={{ x: [-20, 0], opacity: [0, 1] }}
             transition={{ duration: 1 }}
           >
-            <h1 className="font-bold">ELEVATE YOUR </h1>
-            <span className="font-bold">WORKOUT</span>
+            <h1 className="font-bold">Welcome to</h1>
+            <span className="font-bold">Gentle Breeze Gym</span>
           </motion.div>
-          <div className="flex py-5">
-            <motion.button
-              onClick={openModal}
-              className="bg-red-500 text-white w-16 h-16 flex items-center justify-center rounded-full"
-              whileHover={{ scale: 1.1 }}
-              animate={{
-                scale: [1, 1.2, 1],
-                transition: {
-                  duration: 1,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                },
-              }}
-            >
-              <FontAwesomeIcon icon={faPlay} />
-            </motion.button>
-          </div>
-          <div className="opacity-40">
-            <span>Welcome to Gentle Breeze Gym!</span>
+          <div className="opacity-40 mt-4">
+            <span>Elevate your workout here!</span>
             <p>
               At Gentle Breeze Gym, we foster a welcoming environment for all
               fitness levels. Whether you're starting your fitness journey or
@@ -57,33 +59,6 @@ const Hero = () => {
               Gentle Breeze Gym. Let's get fit together!
             </p>
           </div>
-
-          
-
-          <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            contentLabel="Video Modal"
-            className="flex justify-center items-center h-full"
-            overlayClassName="fixed inset-0 bg-black bg-opacity-75 z-50"
-          >
-            <div className="bg-white p-10 w-full max-w-4xl h-3/4">
-              <button onClick={closeModal} className="float-right mb-4">
-                Close
-              </button>
-              <div className="flex justify-center items-center h-full">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="GentleBreeze Video Player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          </Modal>
         </div>
 
         <div className="relative flex justify-center items-center hidden md:flex">
@@ -93,6 +68,46 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Centered Play Button */}
+      <motion.button
+        onClick={openModal}
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 text-white w-20 h-20 flex items-center justify-center rounded-full z-10"
+        whileHover={{ scale: 1.1 }}
+        animate={{
+          scale: [1, 1.2, 1],
+          transition: {
+            duration: 1,
+            repeat: Infinity,
+            repeatType: "reverse",
+          },
+        }}
+      >
+        <FontAwesomeIcon icon={faPlay} size="2x" />
+      </motion.button>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Video Modal"
+        className="flex justify-center items-center h-full"
+        overlayClassName="fixed inset-0 bg-black bg-opacity-75 z-50"
+      >
+        <div
+          className="bg-white rounded-3xl overflow-hidden w-full max-w-4xl h-3/4"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex justify-center items-center h-full">
+            <video
+              width="100%"
+              height="100%"
+              src={currentVideo}
+              controls
+              autoPlay
+            />
+          </div>
+        </div>
+      </Modal>
 
       <div className="bg-black flex flex-row items-center justify-center">
         <div className="text-[#ffffff] pt-10 pb-10 m-7">
