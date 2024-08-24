@@ -17,13 +17,13 @@ const ScrollToTopButton = () => {
   };
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768); // Adjust this breakpoint as needed
+    setIsMobile(window.innerWidth <= 768);
   };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-    handleResize(); // Check initial screen size
+    handleResize();
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
@@ -35,7 +35,7 @@ const ScrollToTopButton = () => {
   };
 
   if (isMobile) {
-    return null; // Don't render the button on mobile screens
+    return null;
   }
 
   return (
