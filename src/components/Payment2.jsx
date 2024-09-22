@@ -10,7 +10,7 @@ const Payment2 = () => {
           <div className="opacity-40 text-lg font-signika font-normal text-black">
             Pricing Plan
           </div>
-          <span className="text-opacity-90 font-signika font-bold text-2xl md:text-4xl uppercase text-black">
+          <span className="text-opacity-90 font-signika font-bold text-2xl md:text-4xl text-black">
             Join Today
           </span>
         </div>

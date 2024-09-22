@@ -57,7 +57,7 @@ const Reviews = () => {
           <div className="opacity-40 text-lg font-signika font-normal text-black">
             Reviews
           </div>
-          <span className="text-opacity-90 font-signika font-bold text-2xl md:text-4xl uppercase text-black">
+          <span className="text-opacity-90 font-signika font-bold text-2xl md:text-4xl text-black">
             From Our Clients
           </span>
         </div>

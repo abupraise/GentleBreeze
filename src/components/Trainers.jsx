@@ -56,7 +56,7 @@ const TrainerCard = ({
 const TrainerCardStatic = ({ imageUrl, width = "20.9rem" }) => {
   return (
     <div
-      className="relative mt-4 h-[25rem] rounded-[1.9rem] shadow-lg bg-cover bg-center"
+      className="relative h-[25rem] rounded-[1.9rem] shadow-lg bg-cover bg-center md:m-4 mt-4"
       style={{ backgroundImage: `url(${imageUrl})`, width }}
     ></div>
   );
@@ -70,8 +70,8 @@ const OurServices = () => (
           <div className="opacity-40 text-lg font-signika font-normal text-black">
             What We Do
           </div>
-          <span className="text-opacity-90 font-signika font-bold text-2xl md:text-4xl uppercase text-black">
-            OUR SERVICES
+          <span className="text-opacity-90 font-signika font-bold text-2xl md:text-4xl text-black">
+            Our Services
           </span>
         </div>
       </div>
