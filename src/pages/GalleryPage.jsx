@@ -8,12 +8,7 @@ const GalleryPage = () => {
     { type: "video", src: "/assets/videos/video2.mp4" },
     { type: "video", src: "/assets/videos/video3.mp4" },
     { type: "video", src: "/assets/videos/video4.mp4" },
-    { type: "video", src: "/assets/videos/video5.mp4" },
-    { type: "video", src: "/assets/videos/video6.mp4" },
-    { type: "video", src: "/assets/videos/video7.mp4" },
-    { type: "video", src: "/assets/videos/video8.mp4" },
-    { type: "video", src: "/assets/videos/video9.mp4" },
-    { type: "video", src: "/assets/videos/video10.mp4" },
+    { type: "video", src: "/assets/videos/video5.mp4" }
   ];
 
   const randomizedGalleryItems = useMemo(() => {
