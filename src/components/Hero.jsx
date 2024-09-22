@@ -13,10 +13,7 @@ const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState("");
 
   const openModal = useCallback(() => {
-    const galleryVideos = [
-      "/assets/videos/GB.mp4",
-      
-    ];
+    const galleryVideos = ["/assets/videos/GB.mp4"];
     const randomVideo =
       galleryVideos[Math.floor(Math.random() * galleryVideos.length)];
     setCurrentVideo(randomVideo);
@@ -60,7 +57,7 @@ const Hero = () => {
       <motion.button
         onClick={openModal}
         className="absolute top-[25%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 text-white w-20 h-20 hidden md:flex items-center justify-center rounded-full z-10"
-        style={{ backgroundColor: "#ED3833" }}
+        style={{ backgroundColor: "#ED3833", zIndex: 5 }}
         whileHover={{ scale: 1.1 }}
         animate={{
           scale: [1, 1.2, 1],
