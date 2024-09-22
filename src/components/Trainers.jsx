@@ -56,7 +56,7 @@ const TrainerCard = ({
 const TrainerCardStatic = ({ imageUrl, width = "20.9rem" }) => {
   return (
     <div
-      className="relative m-4 h-[25rem] rounded-[1.9rem] shadow-lg bg-cover bg-center"
+      className="relative mt-4 h-[25rem] rounded-[1.9rem] shadow-lg bg-cover bg-center"
       style={{ backgroundImage: `url(${imageUrl})`, width }}
     ></div>
   );
