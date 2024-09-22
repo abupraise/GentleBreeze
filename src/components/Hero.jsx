@@ -83,13 +83,12 @@ const Hero = () => {
           className="bg-black rounded-3xl overflow-hidden w-full max-w-4xl h-[30rem] relative"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close Button with higher z-index */}
           <button
             onClick={(e) => {
               e.stopPropagation();
               closeModal();
             }}
-            className="absolute top-3 right-3 text-white text-3xl font-bold cursor-pointer z-10" // Added z-10 for higher z-index
+            className="absolute top-3 right-3 text-white text-3xl font-bold cursor-pointer z-10"
           >
             &times;
           </button>
