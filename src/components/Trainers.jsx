@@ -1,6 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 import image1 from "../assets/coach.jpeg";
 import image2 from "../assets/coach1.jpeg";
 import image3 from "../assets/coach3.jpeg";
@@ -14,7 +14,13 @@ const SectionTitle = ({ title, description }) => (
   </div>
 );
 
-const TrainerCard = ({ imageUrl, name, description, instagramUrl, tiktokUrl }) => {
+const TrainerCard = ({
+  imageUrl,
+  name,
+  description,
+  instagramUrl,
+  tiktokUrl,
+}) => {
   return (
     <div className="relative m-4 w-[20.9rem] h-[25rem] perspective-1000">
       <div className="relative w-full h-full duration-700 transform-style-preserve-3d hover:rotate-y-180">
@@ -56,35 +62,27 @@ const TrainerCardStatic = ({ imageUrl, width = "20.9rem" }) => {
   );
 };
 
-
-const MentorSection = () => (
-  <div className="flex flex-col md:flex-row md:justify-between items-start p-10 pt-20">
-    <div className="flex flex-col md:flex-row items-center md:items-start w-full md:w-auto mb-4 md:mb-0">
-      <TrainerCardStatic imageUrl={image4} width="15rem" />
-      <TrainerCardStatic imageUrl={image5} width="25rem"/>
-    </div>
-    
-    <div className="flex flex-col items-start md:ml-8">
-      <div className="mb-6 pt-20">
-        <h2 className="text-4xl font-bold uppercase text-black opacity-90 mb-1">
-          Our Services
-        </h2>
-
-        <div className="text-lg font-light text-black opacity-40">  
+const OurServices = () => (
+  <div className="flex flex-col md:flex-row md:justify-between items-start md:pt-20">
+    <div className="order-1 md:order-none flex flex-col items-start mb-6 pt-10 md:p-20">
+      <h2 className="text-4xl font-bold uppercase text-black opacity-90 mb-1">
+        Our Services
+      </h2>
+      <div className="text-lg font-light text-black opacity-40">
         <li>Hike and Retreats (Small Groups)</li>
         <li>Weekly Athletes BootCamp (Group / Individual Session)</li>
         <li>Corporate Wellness</li>
         <li>Team Bonding Activities</li>
         <li>More Coming Soon...</li>
-        </div>
-        
       </div>
-
     </div>
-    
+
+    <div className="flex flex-col md:flex-row items-center md:items-start w-full md:w-auto mb-4 md:mb-0">
+      <TrainerCardStatic imageUrl={image4} width="15rem" />
+      <TrainerCardStatic imageUrl={image5} width="25rem" />
+    </div>
   </div>
 );
-
 
 const Trainers = () => (
   <div className="bg-white flex flex-col items-center p-8 md:p-16">
@@ -117,7 +115,7 @@ const Trainers = () => (
         tiktokUrl="https://www.tiktok.com/@a_u_mainika?_t=8nEHu8zHjtu&_r=1"
       />
     </div>
-    <MentorSection />
+    <OurServices />
   </div>
 );
 
