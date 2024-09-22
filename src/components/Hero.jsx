@@ -77,12 +77,24 @@ const Hero = () => {
         contentLabel="Video Modal"
         className="flex justify-center items-center h-full"
         overlayClassName="fixed inset-0 bg-black bg-opacity-75 z-50"
+        shouldCloseOnOverlayClick={true}
       >
         <div
-          className="bg-white rounded-3xl overflow-hidden w-full max-w-4xl h-3/4"
+          className="bg-black rounded-3xl overflow-hidden w-full max-w-4xl h-[30rem] relative"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="flex justify-center items-center h-full">
+          {/* Close Button with higher z-index */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              closeModal();
+            }}
+            className="absolute top-3 right-3 text-white text-3xl font-bold cursor-pointer z-10" // Added z-10 for higher z-index
+          >
+            &times;
+          </button>
+
+          <div className="flex justify-center items-center h-full z-0">
             <video
               width="100%"
               height="100%"
