@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ReviewCard from "./ReviewCard";
@@ -15,97 +15,77 @@ const Reviews = () => {
     {
       name: "Samuel Utulu",
       rating: 5,
-      reviewText: "The community here is so supportive and welcoming. I've made great progress and wonderful friends along the way.",
+      reviewText:
+        "The community here is so supportive and welcoming. I've made great progress and wonderful friends along the way.",
     },
     {
       name: "Fa'iza Adam",
       rating: 3,
-      reviewText: "I love how the coaches attend to thier clients at GB gym, they give you attention to detail and make sure you get value for your money.",
+      reviewText:
+        "I love how the coaches attend to thier clients at GB gym, they give you attention to detail and make sure you get value for your money.",
     },
     {
       name: "Usman Yusuf",
       rating: 4,
-      reviewText: "One of the best gym centre's in Kano, we can't thank you enough for what you have done for us, we have improved so much, and our performance in the game has improved.",
+      reviewText:
+        "One of the best gym centre's in Kano, we can't thank you enough for what you have done for us, we have improved so much, and our performance in the game has improved.",
     },
     {
       name: "Muneer BK (Ozil)",
       rating: 5,
-      reviewText: "I've been a member of GB gym and I can't say enough good things about them. The facilities, the coaches, the staff are all amazing. I've made some incredible friends along the way and I wouldn't trade them for anything.",
-    }
+      reviewText:
+        "I've been a member of GB gym and I can't say enough good things about them. The facilities, the coaches, the staff are all amazing. I've made some incredible friends along the way and I wouldn't trade them for anything.",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef(null);
 
   const handleNext = () => {
-    const newIndex = (currentIndex + 1) % reviews.length;
-    setCurrentIndex(newIndex);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
   };
 
   const handlePrevious = () => {
-    const newIndex = (currentIndex - 1 + reviews.length) % reviews.length;
-    setCurrentIndex(newIndex);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length
+    );
   };
-
-  useEffect(() => {
-    if (carouselRef.current) {
-      const carousel = carouselRef.current;
-      const scrollToPosition =
-        carousel.children[currentIndex].offsetLeft - carousel.children[0].offsetLeft;
-      carousel.scrollTo({
-        left: scrollToPosition,
-        behavior: "smooth",
-      });
-    }
-  }, [currentIndex]);
 
   return (
     <div className="bg-white p-6 md:p-20 relative flex flex-col items-center w-full h-auto z-0">
-      <div className="w-full flex flex-col md:flex-row justify-between items-center mb-8">
-        <div className="mb-4 md:mb-0">
-          <div className="opacity-40 text-lg font-signika font-normal text-black">Reviews</div>
+      <div className="w-full flex justify-center items-center mb-4">
+        <div className="text-center">
+          <div className="opacity-40 text-lg font-signika font-normal text-black">
+            Reviews
+          </div>
           <span className="text-opacity-90 font-signika font-bold text-2xl md:text-4xl uppercase text-black">
             From Our Clients
           </span>
         </div>
-        {/* <button className="bg-black text-white py-3 px-6 md:px-8 rounded-lg font-signika font-bold text-base">
-          + Give Review
-        </button> */}
       </div>
-      <div className="flex flex-col md:flex-row w-full">
-        {/* <div className="w-full md:w-1/3 mb-8 md:mb-0">
-          <Reviewers />
-        </div> */}
-        <div className="w-full md:w-2/3 flex flex-col items-center md:ml-[63px]">
-          <div className="relative w-full">
-            <div className="flex overflow-hidden w-full space-x-6 pt-12" ref={carouselRef}>
-              {reviews.map((review, index) => (
-                <ReviewCard
-                  key={index}
-                  name={review.name}
-                  rating={review.rating}
-                  reviewText={review.reviewText}
-                  isOverlay={index !== currentIndex}
-                  hasBorder={index === currentIndex}
-                  className="flex-shrink-0 transition-opacity duration-500"
-                />
-              ))}
-            </div>
-          </div>
-          <div className="flex justify-start w-full mt-4 md:mt-1 space-x-4">
-            <button
-              onClick={handlePrevious}
-              className="bg-white text-black w-10 md:w-12 h-10 md:h-12 flex items-center justify-center rounded-full font-signika font-bold text-base border-2 border-[#1F1F1F] hover:bg-[#1F1F1F] hover:text-white"
-            >
-              <FontAwesomeIcon icon={faArrowLeft} />
-            </button>
-            <button
-              onClick={handleNext}
-              className="bg-white text-black w-10 md:w-12 h-10 md:h-12 flex items-center justify-center rounded-full font-signika font-bold text-base border-2 border-[#1F1F1F] hover:bg-[#1F1F1F] hover:text-white"
-            >
-              <FontAwesomeIcon icon={faArrowRight} />
-            </button>
-          </div>
+      <div className="w-full flex flex-col items-center">
+        <div className="w-full max-w-[500px]">
+          <ReviewCard
+            name={reviews[currentIndex].name}
+            rating={reviews[currentIndex].rating}
+            reviewText={reviews[currentIndex].reviewText}
+            isOverlay={false}
+            hasBorder={true}
+            className="w-full"
+          />
+        </div>
+        <div className="flex justify-center w-full mt-4 space-x-4">
+          <button
+            onClick={handlePrevious}
+            className="bg-white text-black w-10 md:w-12 h-10 md:h-12 flex items-center justify-center rounded-full font-signika font-bold text-base border-2 border-[#1F1F1F] hover:bg-[#1F1F1F] hover:text-white"
+          >
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </button>
+          <button
+            onClick={handleNext}
+            className="bg-white text-black w-10 md:w-12 h-10 md:h-12 flex items-center justify-center rounded-full font-signika font-bold text-base border-2 border-[#1F1F1F] hover:bg-[#1F1F1F] hover:text-white"
+          >
+            <FontAwesomeIcon icon={faArrowRight} />
+          </button>
         </div>
       </div>
     </div>

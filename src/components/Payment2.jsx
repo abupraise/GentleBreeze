@@ -1,25 +1,36 @@
 import React from "react";
-import  Price1  from "../assets/price1.jpeg";
-import  Price2  from "../assets/price2.jpeg";
+import Price1 from "../assets/price1.jpeg";
+import Price2 from "../assets/price2.jpeg";
 
 const Payment2 = () => {
   return (
-    <div>
-        <div className="pl-10">
-      <div className="text-opacity-40 mb-4 text-2xl font-signika text-black">
-        Pricing Plan
-      </div>
-      <span className="text-opacity-100 text-6xl font-signika font-bold uppercase text-black">
-        Join Today
-      </span>
-      </div>
-      <div className="flex justify-around">
-        <div className="flex space-between h-[700px]">
-        <img src={Price1} alt="price 1"></img>
-        <img src={Price2} alt="price 1"></img>
+    <>
+      <div className="w-full flex justify-center items-center mb-4">
+        <div className="text-center">
+          <div className="opacity-40 text-lg font-signika font-normal text-black">
+            Pricing Plan
+          </div>
+          <span className="text-opacity-90 font-signika font-bold text-2xl md:text-4xl uppercase text-black">
+            Join Today
+          </span>
         </div>
       </div>
-    </div>
+      <div className="flex flex-col md:flex-row justify-around items-center md:space-x-8 h-auto">
+        <div className="flex flex-col md:flex-row space-y-0 md:space-y-0">
+          <img
+            src={Price1}
+            alt="price list 1"
+            className="w-full h-auto md:w-[700px] object-contain"
+          />
+
+          <img
+            src={Price2}
+            alt="price list 2"
+            className="w-full h-auto md:w-[700px] object-contain"
+          />
+        </div>
+      </div>
+    </>
   );
 };
 
