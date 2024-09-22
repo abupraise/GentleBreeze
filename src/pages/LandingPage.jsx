@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Payment from "../components/Payment";
+//import Payment from "../components/Payment";
 import Reviews from "../components/Reviews";
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
@@ -9,6 +9,7 @@ import Hero from "../components/Hero";
 import AboutUs from "../components/AboutUs";
 import Trainers from "../components/Trainers";
 import ScrollToTopButton from "../components/ScrollToTopButton";
+import Payment2 from "../components/Payment2";
 
 
 const sectionVariants = {
@@ -56,7 +57,7 @@ const LandingPage = () => {
         variants={sectionVariants}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
-        <Payment />
+        <Payment2 />
       </motion.section>
       <motion.section
         id="reviews"

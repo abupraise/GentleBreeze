@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ReviewCard from "./ReviewCard";
-import Reviewers from "./Reviewers";
+//import Reviewers from "./Reviewers";
 
 const Reviews = () => {
   const reviews = [
@@ -27,6 +27,11 @@ const Reviews = () => {
       rating: 4,
       reviewText: "One of the best gym centre's in Kano, we can't thank you enough for what you have done for us, we have improved so much, and our performance in the game has improved.",
     },
+    {
+      name: "Muneer BK (Ozil)",
+      rating: 5,
+      reviewText: "I've been a member of GB gym and I can't say enough good things about them. The facilities, the coaches, the staff are all amazing. I've made some incredible friends along the way and I wouldn't trade them for anything.",
+    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -68,9 +73,9 @@ const Reviews = () => {
         </button> */}
       </div>
       <div className="flex flex-col md:flex-row w-full">
-        <div className="w-full md:w-1/3 mb-8 md:mb-0">
+        {/* <div className="w-full md:w-1/3 mb-8 md:mb-0">
           <Reviewers />
-        </div>
+        </div> */}
         <div className="w-full md:w-2/3 flex flex-col items-center md:ml-[63px]">
           <div className="relative w-full">
             <div className="flex overflow-hidden w-full space-x-6 pt-12" ref={carouselRef}>
