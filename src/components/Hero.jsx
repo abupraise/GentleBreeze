@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
+import ReactPlayer from "react-player/lazy";
 
 Modal.setAppElement("#root");
 
@@ -80,7 +81,7 @@ const Hero = () => {
         shouldCloseOnOverlayClick={true}
       >
         <div
-          className="bg-black rounded-3xl overflow-hidden w-full max-w-4xl h-[30rem] relative"
+          className="bg-black rounded-[2.5rem] overflow-hidden w-full max-w-4xl h-[30rem] relative"
           onClick={(e) => e.stopPropagation()}
         >
           <button
@@ -94,12 +95,22 @@ const Hero = () => {
           </button>
 
           <div className="flex justify-center items-center h-full z-0">
-            <video
+            <ReactPlayer
+              url={currentVideo}
+              controls
+              playing
+              loop
+              playbackRate={[0.5, 1, 2, 4]}
+              progressColor="#ED3833"
               width="100%"
               height="100%"
-              src={currentVideo}
-              controls
-              autoPlay
+              config={{
+                file: {
+                  attributes: {
+                    controlsList: "nodownload",
+                  },
+                },
+              }}
             />
           </div>
         </div>
