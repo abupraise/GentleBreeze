@@ -15,20 +15,19 @@ const Payment2 = () => {
           </span>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-around items-center md:space-x-8 h-auto">
-        <div className="flex flex-col md:flex-row space-y-0 md:space-y-0">
-          <img
-            src={Price1}
-            alt="price list 1"
-            className="w-full h-auto md:w-[700px] object-contain"
-          />
+      {/* Flexbox layout for images */}
+      <div className="w-full flex flex-col xl:flex-row justify-center items-center xl:gap-8 gap-0">
+        <img
+          src={Price1}
+          alt="price list 1"
+          className="w-full h-auto xl:w-[700px] object-contain"
+        />
 
-          <img
-            src={Price2}
-            alt="price list 2"
-            className="w-full h-auto md:w-[700px] object-contain"
-          />
-        </div>
+        <img
+          src={Price2}
+          alt="price list 2"
+          className="w-full h-auto xl:w-[700px] object-contain mt-0"
+        />
       </div>
     </>
   );
