@@ -63,10 +63,10 @@ const TrainerCardStatic = ({ imageUrl, width = "20.9rem" }) => {
 };
 
 const OurServices = () => (
-  <div className="flex flex-col items-center md:flex-row md:justify-between md:items-start md:pt-20">
-    <div className="flex flex-col items-center md:items-start mb-6 pt-10 md:p-20">
-    <div className="w-full flex justify-center items-center mb-4">
-        <div className="text-center">
+  <div className="w-full flex flex-col items-center md:flex-row md:justify-between md:items-start pt-10 md:pt-20 px-4 md:px-20">
+    <div className="flex flex-col items-center md:items-start mb-6 md:mb-0 w-full md:w-1/2">
+      <div className="w-full flex justify-center md:justify-start items-center mb-4">
+        <div className="text-center md:text-left">
           <div className="opacity-40 text-lg font-signika font-normal text-black">
             What We Do
           </div>
@@ -75,7 +75,7 @@ const OurServices = () => (
           </span>
         </div>
       </div>
-      <ul className="text-sm md:text-lg font-light text-black opacity-40 list-disc list-inside">
+      <ul className="text-sm md:text-lg font-light text-black opacity-70 list-disc list-inside">
         <li>Hike and Retreats (Small Groups)</li>
         <li>Weekly Athletes BootCamp (Group / Individual Session)</li>
         <li>Corporate Wellness</li>
@@ -84,9 +84,15 @@ const OurServices = () => (
       </ul>
     </div>
 
-    <div className="flex flex-col md:flex-row items-center md:items-start w-full md:w-auto">
-      <TrainerCardStatic imageUrl={image4} width="15rem" />
-      <TrainerCardStatic imageUrl={image5} width="25rem" />
+    <div className="flex flex-col md:flex-row items-center md:items-start w-full md:w-1/2 gap-8 md:gap-4">
+      <TrainerCardStatic
+        imageUrl={image4}
+        className="w-full md:w-[15rem] object-contain"
+      />
+      <TrainerCardStatic
+        imageUrl={image5}
+        className="w-full md:w-[25rem] object-contain"
+      />
     </div>
   </div>
 );
