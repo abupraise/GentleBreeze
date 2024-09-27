@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom"
 import image1 from "../assets/coach.jpeg";
 import image2 from "../assets/coach1.jpeg";
 import image3 from "../assets/coach3.jpeg";
@@ -80,7 +81,11 @@ const OurServices = () => (
         <li>Weekly Athletes BootCamp (Group / Individual Session)</li>
         <li>Corporate Wellness</li>
         <li>Team Bonding Activities</li>
-        <li>More Coming Soon...</li>
+        <li>
+          <a href="/gallery" className="text-blue-500">
+            View Gallery
+          </a>{" "}
+        </li>
       </ul>
     </div>
 
