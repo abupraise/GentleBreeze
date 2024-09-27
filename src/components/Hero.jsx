@@ -101,7 +101,7 @@ const Hero = () => {
         shouldCloseOnOverlayClick={true}
       >
         <div
-          className="bg-black rounded-[2.5rem] overflow-hidden w-full max-w-4xl h-[30rem] relative"
+          className="bg-black rounded-[2.5rem] overflow-hidden w-full max-w-4xl h-[20rem] sm:h-[25rem] md:h-[30rem] relative"
           onClick={(e) => e.stopPropagation()}
         >
           <button
