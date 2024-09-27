@@ -38,6 +38,26 @@ const Hero = () => {
             <h1 className="font-bold">Welcome to</h1>
             <span className="font-bold">Gentle Breeze Gym</span>
           </motion.div>
+
+          <div className="md:hidden flex justify-center my-6">
+            <motion.button
+              onClick={openModal}
+              className="text-white w-16 h-16 flex items-center justify-center rounded-full z-5"
+              style={{ backgroundColor: "#ED3833" }}
+              whileHover={{ scale: 1.1 }}
+              animate={{
+                scale: [1, 1.2, 1],
+                transition: {
+                  duration: 1,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                },
+              }}
+            >
+              <FontAwesomeIcon icon={faPlay} size="2x" />
+            </motion.button>
+          </div>
+
           <div className="opacity-40 mt-4">
             <p>
               Whether you're just starting or pushing your limits, our top-notch

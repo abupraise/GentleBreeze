@@ -16,7 +16,7 @@ const Contact = () => {
       <div className="absolute inset-0 bg-black opacity-65"></div>
       <div className="relative z-10 text-center">
         <h2 className="text-white opacity-90 font-signika font-medium text-2xl mb-4">
-          Call us Today
+          Call Us Today
         </h2>
         <p className="text-white opacity-90 font-signika font-bold text-5xl uppercase mb-4">
           +234 902 002 0403
