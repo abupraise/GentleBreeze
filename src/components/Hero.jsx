@@ -67,10 +67,10 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="relative flex justify-center items-center hidden md:flex">
-          <div className="absolute left-[17.45rem] top-[0rem] w-[441px] h-[43.65rem] bg-[#1F1F1F] opacity-100 z-0"></div>
-          <div className="relative">
-            <img src={Man} alt="image" />
+        <div className="relative flex justify-center items-center hidden lg:flex xl:flex">
+          <div className="absolute left-[17.45rem] top-[0rem] w-[441px] h-[43.65rem] bg-[#1F1F1F] opacity-100 z-0 hidden xl:flex"></div>
+          <div className="relative man-image-container">
+            <img src={Man} alt="image" className="man-image" />
           </div>
         </div>
       </div>
