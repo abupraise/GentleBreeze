@@ -10,6 +10,7 @@ import AboutUs from "../components/AboutUs";
 import Trainers from "../components/Trainers";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import Payment2 from "../components/Payment2";
+import WhatsAppChat from "../components/WhatsappChat";
 
 
 const sectionVariants = {
@@ -39,7 +40,6 @@ const LandingPage = () => {
       >
         <AboutUs />
       </motion.section>
-      
       <motion.section
         id="trainers"
         initial="hidden"
@@ -71,6 +71,7 @@ const LandingPage = () => {
       <Contact />
       <Footer />
       <ScrollToTopButton />
+      <WhatsAppChat/>
     </>
   );
 };
