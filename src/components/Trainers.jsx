@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import image1 from "../assets/coach.jpeg";
 import image2 from "../assets/coach1.jpeg";
 import image3 from "../assets/coach3.jpeg";
@@ -82,24 +82,25 @@ const OurServices = () => (
         <li>Corporate Wellness</li>
         <li>Team Bonding Activities</li>
         <li>
-        <Link
-          to="/gallery" className="text-blue-500">
+          <Link to="/gallery" className="text-blue-500">
             View Gallery
           </Link>
         </li>
       </ul>
     </div>
 
-    <div className="flex flex-col md:flex-row items-center md:items-start w-full md:w-1/2 gap-8 md:gap-4">
-      <TrainerCardStatic
-        imageUrl={image4}
-        className="w-full md:w-[15rem] object-contain"
-      />
-      <TrainerCardStatic
-        imageUrl={image5}
-        className="w-full md:w-[25rem] object-contain"
-      />
-    </div>
+    <div className="flex flex-col md:flex-row items-center md:items-start w-full gap-8 md:gap-4">
+  <TrainerCardStatic
+    imageUrl={image4}
+    className="w-full md:w-[160px] lg:w-[120px] xl:w-[100px] object-contain"
+  />
+  <TrainerCardStatic
+    imageUrl={image5}
+    className="w-full md:w-[400px] lg:w-[500px] xl:w-[600px] object-contain"
+  />
+</div>
+
+
   </div>
 );
 

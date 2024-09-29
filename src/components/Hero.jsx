@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
+import { motion } from "framer-motion";
 import Man from "../assets/Hero.png";
 import CountUp from "react-countup";
-import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
@@ -26,20 +26,50 @@ const Hero = () => {
     setCurrentVideo("");
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.3,
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <div className="relative">
+    <motion.div
+      className="relative"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 relative">
-        <div className="py-10 px-5 md:px-20 text-center md:text-left">
+        <motion.div
+          className="lg:py-10 px-5 md:px-20 text-center md:text-left"
+          variants={itemVariants}
+        >
           <motion.div
             className="text-[40px] md:text-[60px] pt-32 md:pt-48"
-            animate={{ x: [-20, 0], opacity: [0, 1] }}
-            transition={{ duration: 1 }}
+            variants={itemVariants}
           >
             <h1 className="font-bold">Welcome to</h1>
             <span className="font-bold">Gentle Breeze Gym</span>
           </motion.div>
 
-          <div className="md:hidden flex justify-center my-6">
+          <motion.div
+            className="md:hidden flex justify-center my-6"
+            variants={itemVariants}
+          >
             <motion.button
               onClick={openModal}
               className="text-white w-16 h-16 flex items-center justify-center rounded-full z-5"
@@ -56,23 +86,38 @@ const Hero = () => {
             >
               <FontAwesomeIcon icon={faPlay} size="2x" />
             </motion.button>
-          </div>
+          </motion.div>
 
-          <div className="opacity-40 mt-4">
-            <p>
+          <motion.div className="mt-4 text-gray-600" variants={itemVariants}>
+            <p className="mb-2">
               Whether you're just starting or pushing your limits, our top-notch
               facilities and supportive trainers are here to guide you.
             </p>
-            <span>Join us and elevate your workout journey today!</span>
-          </div>
-        </div>
+            <span className="font-medium">
+              Join us and elevate your workout journey today!
+            </span>
+          </motion.div>
+        </motion.div>
 
-        <div className="relative flex justify-center items-center hidden lg:flex xl:flex">
-          <div className="absolute left-[17.45rem] top-[0rem] w-[441px] h-[43.65rem] bg-[#1F1F1F] opacity-100 z-0 hidden xl:flex"></div>
-          <div className="relative">
+        <motion.div
+          className="relative flex justify-center items-center"
+          variants={itemVariants}
+        >
+          <motion.div
+            className="absolute left-[17.45rem] top-[0rem] w-[441px] h-[43.65rem] bg-[#1F1F1F] opacity-100 z-0 hidden xl:flex"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          ></motion.div>
+          <motion.div
+            className="relative"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
             <img src={Man} alt="image" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       <motion.button
@@ -100,9 +145,13 @@ const Hero = () => {
         overlayClassName="fixed inset-0 bg-black bg-opacity-75 z-50"
         shouldCloseOnOverlayClick={true}
       >
-        <div
+        <motion.div
           className="bg-black rounded-[2.5rem] overflow-hidden w-full max-w-4xl h-[20rem] sm:h-[25rem] md:h-[30rem] relative"
           onClick={(e) => e.stopPropagation()}
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.9, opacity: 0 }}
+          transition={{ duration: 0.3 }}
         >
           <button
             onClick={(e) => {
@@ -133,35 +182,62 @@ const Hero = () => {
               }}
             />
           </div>
-        </div>
+        </motion.div>
       </Modal>
 
-      <div className="bg-black flex flex-row items-center justify-center">
-        <div className="text-[#ffffff] pt-10 pb-10 m-7">
-          <h1 className="text-[40px]">
-            <CountUp start={0} end={100} duration={3} />+
-          </h1>
-          <p>Happy customers</p>
-          <span>Our community is growing fast</span>
-        </div>
-
-        <div className="text-[#ffffff] pt-10 pb-10 m-7">
-          <h1 className="text-[40px]">
-            <CountUp start={0} end={2} duration={3} />+
-          </h1>
-          <p>Years experience</p>
-          <span>Experience in various workouts</span>
-        </div>
-
-        <div className="text-[#ffffff] pt-10 pb-10 m-7">
-          <h1 className="text-[40px]">
-            <CountUp start={0} end={90} duration={3} />%
-          </h1>
-          <p>Customer satisfaction</p>
-          <span>Our community is growing fast</span>
-        </div>
-      </div>
-    </div>
+      <motion.div
+        className="bg-black flex flex-row items-center justify-center"
+        variants={containerVariants}
+      >
+        {[
+          {
+            end: 100,
+            text: "Happy customers",
+            subtext: "Our community is growing fast",
+          },
+          {
+            end: 2,
+            text: "Years experience",
+            subtext: "Experience in various workouts",
+          },
+          {
+            end: 90,
+            text: "Customer satisfaction",
+            subtext: "Our community is growing fast",
+          },
+        ].map((item, index) => (
+          <motion.div
+            key={index}
+            className="text-[#ffffff] pt-10 pb-10 m-7"
+            variants={itemVariants}
+          >
+            <motion.h1
+              className="text-[40px]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <CountUp start={0} end={item.end} duration={3} />
+              {item.end === 90 ? "%" : "+"}
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 + index * 0.2 }}
+            >
+              {item.text}
+            </motion.p>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 + index * 0.2 }}
+            >
+              {item.subtext}
+            </motion.span>
+          </motion.div>
+        ))}
+      </motion.div>
+    </motion.div>
   );
 };
 
