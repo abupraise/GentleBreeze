@@ -82,9 +82,10 @@ const OurServices = () => (
         <li>Corporate Wellness</li>
         <li>Team Bonding Activities</li>
         <li>
-          <a href="/gallery" className="text-blue-500">
+        <Link
+          to="/gallery" className="text-blue-500">
             View Gallery
-          </a>{" "}
+          </Link>
         </li>
       </ul>
     </div>
