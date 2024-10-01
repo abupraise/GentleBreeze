@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ReactPlayer from 'react-player';
 
 const Gallery = ({ items }) => {
   const containerVariants = {
@@ -49,14 +50,21 @@ const Gallery = ({ items }) => {
                 loading="lazy"
               />
             ) : (
-              <video 
-                src={item.src} 
-                controls 
-                autoPlay={index === 0}
+              <ReactPlayer
+                url={item.src}
+                controls
+                playing={index === 0}
                 muted={index === 0}
                 loop={index === 0}
-                className="w-full h-full object-cover"
-                preload="metadata"
+                width="100%"
+                height="100%"
+                config={{
+                  file: {
+                    attributes: {
+                      controlsList: 'nodownload'
+                    }
+                  }
+                }}
               />
             )}
           </motion.div>
