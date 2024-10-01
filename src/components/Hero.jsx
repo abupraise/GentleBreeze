@@ -59,7 +59,7 @@ const Hero = () => {
           variants={itemVariants}
         >
           <motion.div
-            className="text-[40px] md:text-[60px] pt-32 md:pt-48"
+            className="text-[40px] md:text-[60px] pt-32 md:pt-28"
             variants={itemVariants}
           >
             <h1 className="font-bold">Welcome to</h1>
@@ -72,7 +72,7 @@ const Hero = () => {
           >
             <motion.button
               onClick={openModal}
-              className="text-white w-16 h-16 flex items-center justify-center rounded-full z-5"
+              className="absolute top-[25%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 text-white w-20 h-20 hidden md:flex items-center justify-center rounded-full z-10 md:w-16 md:h-16 lg:w-20 lg:h-20"
               style={{ backgroundColor: "#ED3833" }}
               whileHover={{ scale: 1.1 }}
               animate={{
@@ -100,7 +100,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className="relative flex justify-center items-center"
+          className="relative flex justify-center items-center md:mt-10"
           variants={itemVariants}
         >
           <motion.div
@@ -115,7 +115,7 @@ const Hero = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <img src={Man} alt="image" />
+            <img src={Man} alt="image" className="md:mt-[2.75rem]"/>
           </motion.div>
         </motion.div>
       </div>
