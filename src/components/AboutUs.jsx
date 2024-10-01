@@ -56,7 +56,7 @@ const AboutUs = () => {
       <div className="flex flex-wrap justify-center items-center">
         <FeatureCard
           title="Trainer Qualifications"
-          description="Our trainners are highly professional and dedicated to helping you achieve your fitness goals"
+          description="Our trainers are highly professional and dedicated to helping you achieve your fitness goals"
           icon={icon1}
         />
         <FeatureCard
