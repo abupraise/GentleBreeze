@@ -90,17 +90,15 @@ const OurServices = () => (
     </div>
 
     <div className="flex flex-col md:flex-row items-center md:items-start w-full gap-8 md:gap-4">
-  <TrainerCardStatic
-    imageUrl={image4}
-    className="w-full md:w-[160px] lg:w-[120px] xl:w-[100px] object-contain"
-  />
-  <TrainerCardStatic
-    imageUrl={image5}
-    className="w-full md:w-[400px] lg:w-[500px] xl:w-[600px] object-contain"
-  />
-</div>
-
-
+      <TrainerCardStatic
+        imageUrl={image4}
+        className="w-full md:w-[160px] lg:w-[120px] xl:w-[100px] object-contain"
+      />
+      <TrainerCardStatic
+        imageUrl={image5}
+        className="w-full md:w-[400px] lg:w-[500px] xl:w-[600px] object-contain"
+      />
+    </div>
   </div>
 );
 
