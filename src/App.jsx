@@ -1,10 +1,11 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LandingPage from './pages/LandingPage';
-import GalleryPage from './pages/GalleryPage';
-import NotFound from './pages/NotFoundPage';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import GalleryPage from "./pages/GalleryPage";
+import NotFound from "./pages/NotFoundPage";
 
 function App() {
+  
   return (
     <Router>
       <Routes>
