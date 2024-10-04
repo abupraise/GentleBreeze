@@ -26,7 +26,8 @@
     "react-player": "^2.16.0",
     "react-router": "^6.23.1",
     "react-router-dom": "^6.26.1",
-    "react-scroll": "^1.9.0"
+    "react-scroll": "^1.9.0",
+    "vite-plugin-sitemap": "^0.7.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
